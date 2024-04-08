@@ -1,0 +1,51 @@
+header {
+    @include mixins.flex();
+    height: 8.5em;
+    padding: 1.7em;
+
+    h1 {
+        width: 20vw;
+        height: 100%;
+
+        img {
+            height: 100%;
+            ;
+        }
+    }
+
+    nav {
+        // TODO: ハンバーガーメニューのデザインによっては表示させておく
+        display: none;
+    }
+}
+
+#hamburger {
+    display: block;
+    position: fixed;
+    z-index: 300;
+    background-color: black;
+    top: 0;
+    right: 0;
+
+    span {
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 2px;
+        left: 6px;
+        background: black;
+
+
+        &:nth-child(1) {
+            top: 10px;
+        }
+
+        &:nth-child(2) {
+            top: 20px;
+        }
+
+        &:nth-child(3) {
+            top: 30px;
+        }
+    }
+}

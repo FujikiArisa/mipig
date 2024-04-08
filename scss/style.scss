@@ -1,0 +1,16 @@
+@use "./mixins" as mixins;
+@use "./variables" as variables;
+
+@import "./utilities";
+
+// ここから各部品ごとのSCSSを読み込む
+@import "./parts/header";
+@import "./parts/main";
+@import "./parts/about";
+@import "./parts/slide";
+@import "./parts/family";
+@import "./parts/service";
+@import "./parts/news";
+@import "./parts/banner";
+@import "./parts/instagram";
+@import "./parts/footer";

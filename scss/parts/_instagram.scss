@@ -1,0 +1,132 @@
+#instagram {
+    background-color: variables.$main-color;
+    padding: 10em 0 15em;
+    position: relative;
+    z-index: -1000;
+    overflow-x: hidden;
+
+    &:last-child {
+        padding-bottom: 10em;
+    }
+
+    h2 {
+        margin: 0 auto;
+        position: relative;
+        z-index: 300;
+        padding: 0 12em;
+        margin-bottom: 3em;
+
+
+        img {
+            position: relative;
+            padding: 0 .5em;
+            height: 10vh;
+            z-index: 300;
+            background-color: variables.$main-color;
+            margin: 0 auto;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 120%;
+            height: 2px;
+            background-image: linear-gradient(to right, variables.$sub-color 4px, transparent 2px);
+            background-size: 10px 2px;
+            position: absolute;
+            left: -10%;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+            z-index: 0;
+        }
+    }
+
+    .picture {
+        position: relative;
+
+        img {
+            position: absolute;
+            display: block;
+            z-index: -100;
+            width: 20vw;
+
+            &:first-child {
+                right: 3em;
+                top: -6em;
+            }
+
+            &:last-child {
+                left: 3em;
+                width: 10%;
+                top: -4em;
+            }
+        }
+    }
+
+
+    ul {
+        @include mixins.box-width(8);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+
+        li {
+            width: 33%;
+            padding: .5em;
+
+            img {
+                z-index: 500;
+            }
+        }
+
+    }
+
+    .more {
+        display: block;
+        font-size: variables.$base-font-size;
+        padding: 1em 5em 1em 1em;
+        max-width: 200px;
+        margin: 3em auto 0;
+        background: variables.$accent-color;
+        position: relative;
+        color: variables.$font-color;
+
+
+
+        &:before {
+            content: "";
+            display: block;
+            border: 1px #403333 solid;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: -3px;
+            left: -3px;
+        }
+
+        i {
+            position: absolute;
+            right: 1.5em;
+        }
+
+    }
+
+    &:after {
+        background-image: url(/images/wave_02@3x.png);
+        background-color: transparent;
+        background-repeat: repeat-x;
+        background-size: contain;
+        background-position: left bottom;
+        display: block;
+        height: 72px;
+        width: 1980px;
+        content: "";
+        z-index: 400;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        animation: bottom-wave 15s linear infinite;
+    }
+}

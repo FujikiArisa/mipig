@@ -1,0 +1,41 @@
+@use "./variables" as variables;
+
+@mixin flex() {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin box-width($scale: 9) {
+    width: variables.$base-split * $scale;
+    margin: 0 auto;
+}
+
+@mixin main_position( $z-index, $left: 0) {
+    position: absolute;
+    top: 0;
+    left: $left;
+    z-index: $z-index;
+}
+
+
+@mixin mq($breakpoint) {
+    @media #{map-get(variables.$breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@mixin sp-hide($display: flex) {
+    display: $display;
+
+    &.sp_hide {
+        display: none;
+
+        @include mq(tablet) {
+            display: $display;
+        }
+    }
+}
+// SPのときに非表示にする

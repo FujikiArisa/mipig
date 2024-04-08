@@ -1,0 +1,631 @@
+html {
+  font-size: 62.5%;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #403333;
+}
+
+img {
+  max-width: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 8.5em;
+  padding: 1.7em;
+}
+header h1 {
+  width: 20vw;
+  height: 100%;
+}
+header h1 img {
+  height: 100%;
+}
+header nav {
+  display: none;
+}
+
+#hamburger {
+  display: block;
+  position: fixed;
+  z-index: 300;
+  background-color: black;
+  top: 0;
+  right: 0;
+}
+#hamburger span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  left: 6px;
+  background: black;
+}
+#hamburger span:nth-child(1) {
+  top: 10px;
+}
+#hamburger span:nth-child(2) {
+  top: 20px;
+}
+#hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+main {
+  position: relative;
+  height: calc(100vh - 8.5em);
+  overflow-x: hidden;
+}
+main:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2117647059);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+}
+main video {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -50 main video;
+  z-index: 100;
+}
+main img {
+  height: fit-content;
+  width: 70%;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 300;
+}
+main:after {
+  background-image: url(/images/wave_01@3x.png);
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: left bottom;
+  display: block;
+  height: 72px;
+  width: 1980px;
+  content: "";
+  z-index: 400;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  animation: bottom-wave 15s linear infinite;
+}
+
+@keyframes bottom-wave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-990px);
+  }
+}
+#about {
+  background-color: #FFF2F2;
+}
+#about section {
+  padding-top: 10em;
+}
+#about section:last-child {
+  padding-bottom: 10em;
+}
+#about section h2 {
+  position: relative;
+  margin: 0 auto;
+  width: 80%;
+}
+#about section h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120%;
+  height: 2px;
+  background-image: linear-gradient(to right, #b37474 4px, transparent 2px);
+  background-size: 10px 2px;
+  left: -10%;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  z-index: 0;
+}
+#about section h2 img {
+  position: relative;
+  background-color: #FFF2F2;
+  padding: 0 0.5em;
+  z-index: 1;
+}
+#about section > img {
+  display: block;
+  padding: 4em 0;
+  margin: 0 auto;
+  width: 65vw;
+}
+#about div {
+  width: 80vw;
+  margin: 0 auto;
+}
+#about div span {
+  display: none;
+}
+#about div p {
+  font-size: 13px;
+  line-height: 2em;
+}
+#about div strong {
+  text-decoration: underline;
+  text-decoration-color: #F2D291;
+  text-decoration-thickness: 5px;
+  text-underline-offset: -2px;
+  text-decoration-skip-ink: none;
+  font-weight: normal;
+}
+#about div .more {
+  display: block;
+  font-size: 13px;
+  padding: 1em 5em 1em 1em;
+  max-width: 200px;
+  margin: 3em auto 0;
+  background: #F2D291;
+  position: relative;
+  color: #403333;
+  position: relative;
+}
+#about div .more:before {
+  content: "";
+  display: block;
+  border: 1px #403333 solid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -3px;
+  left: -3px;
+}
+#about div .more i {
+  position: absolute;
+  right: 1.5em;
+}
+
+#slide {
+  display: none;
+}
+#slide.sp_hide {
+  display: none;
+}
+@media screen and (min-width: 431px) {
+  #slide.sp_hide {
+    display: none;
+  }
+}
+
+#family {
+  background-image: url(/images/family/bg@3x.png);
+  background-size: 70%;
+}
+#family h2 {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10em;
+}
+#family ul {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#family ul li {
+  width: 45%;
+  margin-top: 10vw;
+}
+#family ul li:nth-child(3), #family ul li:nth-child(4) {
+  padding-bottom: 20vw;
+}
+#family ul li a {
+  display: flex;
+  flex-direction: column-reverse;
+  text-align: center;
+}
+#family ul li a h3 {
+  font-size: 1.3em;
+  padding-top: 3vw;
+  color: #b37474;
+  font-weight: 500;
+}
+
+#service {
+  background: #FFF2F2;
+}
+#service h2 {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10em;
+}
+#service ul {
+  width: 90vw;
+  margin: 0 auto;
+}
+#service ul li {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-top: 10em;
+}
+#service ul li.sp_hide {
+  display: none;
+}
+@media screen and (min-width: 431px) {
+  #service ul li.sp_hide {
+    display: flex;
+  }
+}
+#service ul li:first-child {
+  margin-top: 5em;
+}
+#service ul li:last-child {
+  padding-bottom: 10em;
+}
+#service ul li h3 {
+  max-width: 300px;
+  font-size: 2em;
+  background: #b37474;
+  margin: 0 auto;
+  padding: 0.2em 3em;
+  border-radius: 1.5em;
+  position: relative;
+}
+#service ul li h3 a {
+  color: #fff;
+  line-height: 2em;
+  font-weight: 700;
+  letter-spacing: 0em;
+}
+#service ul li h3 i {
+  background: rgba(255, 255, 255, 0.231372549);
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+  line-height: 1.5em;
+  border-radius: 1.5em;
+  color: #b37474;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0.5em;
+  margin: auto;
+}
+#service ul li figure p {
+  font-size: 13px;
+  line-height: 2em;
+  padding: 1.5em;
+}
+#service ul li figure p + p {
+  padding: 0 1em 1.5em;
+}
+#service ul li figure p:has(+ p) {
+  padding: 1.5em 1em 0;
+}
+
+#news {
+  padding-bottom: 10em;
+}
+#news h2 {
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 10em;
+}
+#news ul {
+  width: 90vw;
+  margin: 0 auto;
+}
+#news ul li {
+  padding: 1em 0;
+  border-top: 0.5px solid #ccc;
+}
+#news ul li:first-of-type {
+  margin-top: 5em;
+}
+#news ul li:last-of-type {
+  border-bottom: 0.5px solid #ccc;
+}
+#news ul li article img {
+  display: flex;
+}
+#news ul li article img.sp_hide {
+  display: none;
+}
+@media screen and (min-width: 431px) {
+  #news ul li article img.sp_hide {
+    display: flex;
+  }
+}
+#news ul li article time {
+  color: #b37474;
+}
+#news ul li article p {
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 0.3em;
+}
+#news .more {
+  display: block;
+  font-size: 13px;
+  padding: 1em 5em 1em 1em;
+  max-width: 200px;
+  margin: 5em auto 0;
+  background: #F2D291;
+  position: relative;
+  color: #403333;
+}
+#news .more:before {
+  content: "";
+  display: block;
+  border: 1px #403333 solid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -3px;
+  left: -3px;
+}
+#news .more i {
+  position: absolute;
+  right: 1.5em;
+}
+
+#banner {
+  position: relative;
+}
+#banner ul {
+  width: 90vw;
+  margin: 0 auto;
+}
+#banner ul li {
+  position: relative;
+  z-index: 100;
+  margin-bottom: 2em;
+}
+#banner ul li p {
+  font-size: 1.6em;
+  color: #fff;
+  position: absolute;
+  top: 60%;
+  z-index: 300;
+  width: fit-content;
+  padding: 0.1em 0.4em;
+  border-bottom: 1px #fff solid;
+}
+#banner ul li:first-child p {
+  right: 7%;
+}
+#banner ul li:last-child p {
+  left: 7%;
+}
+#banner ul li:before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2117647059);
+  z-index: 200;
+  top: 0;
+  left: 0;
+}
+#banner:before {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: #b37474;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 10%;
+}
+
+#instagram {
+  background-color: #FFF2F2;
+  padding: 10em 0 15em;
+  position: relative;
+  z-index: -1000;
+  overflow-x: hidden;
+}
+#instagram:last-child {
+  padding-bottom: 10em;
+}
+#instagram h2 {
+  margin: 0 auto;
+  position: relative;
+  z-index: 300;
+  padding: 0 12em;
+  margin-bottom: 3em;
+}
+#instagram h2 img {
+  position: relative;
+  padding: 0 0.5em;
+  height: 10vh;
+  z-index: 300;
+  background-color: #FFF2F2;
+  margin: 0 auto;
+}
+#instagram h2::after {
+  content: "";
+  display: block;
+  width: 120%;
+  height: 2px;
+  background-image: linear-gradient(to right, #b37474 4px, transparent 2px);
+  background-size: 10px 2px;
+  position: absolute;
+  left: -10%;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  z-index: 0;
+}
+#instagram .picture {
+  position: relative;
+}
+#instagram .picture img {
+  position: absolute;
+  display: block;
+  z-index: -100;
+  width: 20vw;
+}
+#instagram .picture img:first-child {
+  right: 3em;
+  top: -6em;
+}
+#instagram .picture img:last-child {
+  left: 3em;
+  width: 10%;
+  top: -4em;
+}
+#instagram ul {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+}
+#instagram ul li {
+  width: 33%;
+  padding: 0.5em;
+}
+#instagram ul li img {
+  z-index: 500;
+}
+#instagram .more {
+  display: block;
+  font-size: 13px;
+  padding: 1em 5em 1em 1em;
+  max-width: 200px;
+  margin: 3em auto 0;
+  background: #F2D291;
+  position: relative;
+  color: #403333;
+}
+#instagram .more:before {
+  content: "";
+  display: block;
+  border: 1px #403333 solid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -3px;
+  left: -3px;
+}
+#instagram .more i {
+  position: absolute;
+  right: 1.5em;
+}
+#instagram:after {
+  background-image: url(/images/wave_02@3x.png);
+  background-color: transparent;
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: left bottom;
+  display: block;
+  height: 72px;
+  width: 1980px;
+  content: "";
+  z-index: 400;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  animation: bottom-wave 15s linear infinite;
+}
+
+footer {
+  background-color: #734E4A;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  color: #fff;
+  position: relative;
+}
+footer > div {
+  margin: 0 auto;
+  max-width: 200px;
+}
+footer > div a {
+  display: block;
+}
+footer > div a:first-child {
+  font-size: 8px;
+  text-align: center;
+}
+footer > div a:last-child {
+  font-size: 8px;
+  margin: 5em auto;
+  padding: 1.5em 0;
+  text-align: center;
+  line-height: 2em;
+  border-radius: 1em;
+  background-color: #b37474;
+}
+footer > div a:last-child strong {
+  display: block;
+  font-size: 15px;
+}
+footer aside {
+  font-size: 14px;
+  width: 90vw;
+  margin: 0 auto;
+}
+footer aside #link {
+  border-top: 1px #fff solid;
+  border-bottom: 1px #fff solid;
+  display: flex;
+  font-size: 0.9em;
+  font-weight: 500;
+  padding: 3em 1em;
+}
+footer aside #link > div {
+  width: 50%;
+}
+footer aside #link > div li {
+  padding: 0.6em 0;
+}
+footer aside #link .sp_hide {
+  display: flex;
+}
+footer aside #link .sp_hide.sp_hide {
+  display: none;
+}
+@media screen and (min-width: 431px) {
+  footer aside #link .sp_hide.sp_hide {
+    display: flex;
+  }
+}
+footer aside #social {
+  padding: 1em 1em 0;
+}
+footer aside #social ul {
+  display: flex;
+  justify-content: flex-end;
+}
+footer aside #social ul li:last-child {
+  padding-left: 0.5em;
+}
+footer aside p {
+  font-size: 8px;
+  text-align: center;
+  padding: 3em 1em 0;
+  line-height: 2em;
+}
+footer aside h6 {
+  padding-top: 2em;
+  font-size: 7px;
+  text-align: center;
+}

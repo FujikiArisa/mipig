@@ -1,0 +1,81 @@
+#service {
+    background: variables.$main-color;
+
+    h2 {
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 10em; 
+    }
+
+    ul {
+        @include mixins.box-width();
+
+        li {
+            @include mixins.sp-hide();
+
+            flex-direction: column-reverse;
+            margin-top: 10em;
+
+            &:first-child{
+                margin-top: 5em;
+            }
+
+            &:last-child{
+                padding-bottom: 10em;
+            }
+
+            h3 {
+                max-width: 300px;
+                font-size: 2em;
+                background: variables.$sub-color;
+                margin: 0 auto;
+                padding: 0.2em 3em;
+                border-radius: 1.5em;
+                position: relative;
+
+                a {
+                    color: #fff;
+                    line-height: 2em;
+                    font-weight: 700;
+                    letter-spacing: 0em;
+                }
+
+                i {
+                    background: #ffffff3b;
+                    width: 1.5em;
+                    height: 1.5em;
+                    text-align: center;
+                    line-height: 1.5em;
+                    border-radius: 1.5em;
+                    color: variables.$sub-color;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0.5em;
+                    margin: auto;
+                }
+
+
+
+            }
+
+            figure {
+
+                p {
+                    font-size: variables.$base-font-size;
+                    line-height: 2em;
+                    padding: 1.5em;
+
+                    +p {
+                        padding: 0 1em 1.5em;
+                    }
+
+                    &:has(+ p) {
+                        padding: 1.5em 1em 0;
+                    }
+
+                }
+            }
+        }
+    }
+}

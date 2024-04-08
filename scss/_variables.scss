@@ -1,0 +1,21 @@
+$main-color: #FFF2F2;
+$sub-color: #b37474;
+$accent-color: #F2D291;
+$font-color: #403333;
+// カラー
+
+$base-font-size: 13px;
+// フォントサイズ
+
+$padding-title: 10em 3em 0;
+$base-split: 10vw;
+$box-width: (
+    "tablet": 10vw,
+    "pc": 100%,
+) !default;
+// 余白
+
+$breakpoints: (
+    "tablet": "screen and (min-width: 431px)",
+    "pc": "screen and (min-width: 1000px)",
+) !default;

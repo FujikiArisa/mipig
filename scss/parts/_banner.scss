@@ -1,0 +1,63 @@
+#banner {
+    position: relative;
+
+    ul {
+        @include mixins.box-width();
+
+        li {
+            position: relative;
+            z-index: 100;
+            margin-bottom: 2em;
+
+            p {
+                font-size: 1.6em;
+                color: #fff;
+                position: absolute;
+                top: 60%;
+                z-index: 300;
+                width: fit-content;
+                padding: .1em .4em;
+                border-bottom: 1px #fff solid;
+            }
+
+            &:first-child {
+
+                p {
+                    right: 7%;
+                }
+            }
+
+            &:last-child {
+
+                p {
+                    left: 7%;
+                }
+            }
+
+
+            &:before {
+                position: absolute;
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: #00000036;
+                z-index: 200;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+
+    &:before {
+        position: absolute;
+        content: "";
+        display: block;
+        background-color: variables.$sub-color;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 10%;
+    }
+
+}
