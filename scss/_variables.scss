@@ -2,6 +2,7 @@ $main-color: #FFF2F2;
 $sub-color: #b37474;
 $accent-color: #F2D291;
 $font-color: #403333;
+$border: 1px #ccc solid;
 // カラー
 
 $base-font-size: 13px;
@@ -16,6 +17,7 @@ $box-width: (
 // 余白
 
 $breakpoints: (
-    "tablet": "screen and (min-width: 431px)",
+    "mobile": "screen and (min-width: 431px)",
+    "tablet": "screen and (min-width: 600px)",
     "pc": "screen and (min-width: 1000px)",
 ) !default;

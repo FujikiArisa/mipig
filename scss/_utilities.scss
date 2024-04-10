@@ -9,3 +9,12 @@ html {
 img {
     max-width: 100%;
 }
+
+@keyframes bottom-wave {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-990px)
+    }
+}

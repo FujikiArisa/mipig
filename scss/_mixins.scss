@@ -2,24 +2,144 @@
 
 @mixin flex() {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
+
+// flex
+
+@mixin flex-column() {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+}
+
+// flexの縦並び
 
 @mixin box-width($scale: 9) {
     width: variables.$base-split * $scale;
     margin: 0 auto;
 }
 
-@mixin main_position( $z-index, $left: 0) {
+// 横の余白
+
+
+@mixin main_position($z-index, $left: 0) {
     position: absolute;
     top: 0;
     left: $left;
     z-index: $z-index;
 }
 
+// メイン
+
+@mixin filter-black() {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #00000036;
+}
+// 黒いフィルター
+
+@mixin wave($background-image) {
+    &::after {
+        background-image: $background-image;
+        background-color: transparent;
+        background-repeat: repeat-x;
+        background-size: contain;
+        background-position: left bottom;
+        display: block;
+        height: 72px;
+        width: 2970px;
+        content: "";
+        z-index: 400;
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        animation: bottom-wave 15s linear infinite;
+    }
+}
+
+
+
+@mixin title-sp($width: 80%, $padding-top: 10em) {
+    position: relative;
+    width: $width;
+    margin: 0 auto;
+    padding-top: $padding-top;
+}
+
+// h2
+
+@mixin title-pc($width: 40%, $padding-top: 10em) {
+    position: relative;
+    width: $width;
+    margin: 0 auto;
+    padding-top: $padding-top;
+}
+
+// h2　PC版
+
+@mixin title-border($width: 120%, $left: -10%) {
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: $width;
+        height: 2px;
+        background-image: linear-gradient(to right, variables.$sub-color 4px, transparent 2px);
+        background-size: 10px 2px;
+        left: $left;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        z-index: 0;
+    }
+
+    img {
+        position: relative;
+        background-color: variables.$main-color;
+        padding: 0 .5em;
+        z-index: 1;
+    }
+}
+
+// h2の破線付き
+
+@mixin more($margin-top: 4em) {
+    display: block;
+    font-size: variables.$base-font-size;
+    padding: 1em 5em 1em 1em;
+    max-width: 200px;
+    margin: 0 auto;
+    margin-top: $margin-top;
+    background: variables.$accent-color;
+    position: relative;
+    color: variables.$font-color;
+    position: relative;
+
+    &:before {
+        content: "";
+        display: block;
+        border: 1px #403333 solid;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: -3px;
+        left: -3px;
+    }
+
+    i {
+        position: absolute;
+        right: 1.5em;
+    }
+}
+
+// moreボタン
 
 @mixin mq($breakpoint) {
     @media #{map-get(variables.$breakpoints, $breakpoint)} {
@@ -29,7 +149,7 @@
 
 @mixin sp-hide($display: flex) {
     display: $display;
-
+    
     &.sp_hide {
         display: none;
 
@@ -38,4 +158,5 @@
         }
     }
 }
-// SPのときに非表示にする
+
+// SPのときに非表示

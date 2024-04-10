@@ -3,44 +3,41 @@
     background-image: url(/images/family/bg@3x.png);
     background-size: 70%;
 
-    h2{
-        width: 80%;
-        margin: 0 auto;
-        padding-top: 10em;
+    h2 {
+        @include mixins.title-sp();
+
+        @include mixins.mq(pc){
+            @include mixins.title-pc();
+            }
     }
 
     ul {
         @include mixins.box-width(8);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        @include mixins.flex();
+        padding: 5em 0 7em;
+
+        @include mixins.mq(pc) {
+            flex-wrap: nowrap;
+        }
 
         li {
             width: 45%;
-            margin-top: 10vw;
 
-            &:nth-child(3),
-            &:nth-child(4){
-                padding-bottom: 20vw;
 
-            }
+            a {
+                @include mixins.flex-column();
 
-            a{
-            display: flex;
-            flex-direction: column-reverse;
-            text-align: center;
-
-                h3{
-                    font-size: 1.3em;
-                    padding-top: 3vw;
+                h3 {
                     color: variables.$sub-color;
+                    font-size: 1.3em;
+                    margin-top: 1.5em;
                     font-weight: 500;
                 }
 
             }
 
         }
-        
+
 
     }
 

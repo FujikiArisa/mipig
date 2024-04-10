@@ -2,15 +2,12 @@ main {
     position: relative;
     height: calc(100vh - 8.5em);
     overflow-x: hidden;
+    @include mixins.wave(url(/images/wave_01@3x.png));
+    
 
-    &:before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: #00000036;
-
+    &::before {
         @include mixins.main_position(200);
+        @include mixins.filter-black();
     }
 
     video {
@@ -24,32 +21,6 @@ main {
         bottom: 0;
         right: 0;
         margin: auto;
-
         @include mixins.main_position(300);
-    }
-
-    &:after{
-        background-image: url(/images/wave_01@3x.png);
-        background-repeat: repeat-x;
-        background-size: contain;
-        background-position: left bottom;
-        display: block;
-        height: 72px;
-        width: 1980px;
-        content: "";
-        z-index: 400;
-        position: absolute;
-        bottom: -1px;
-        left: 0;
-        animation: bottom-wave 15s linear infinite;
-    }
-}
-
-@keyframes bottom-wave {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-990px)
     }
 }

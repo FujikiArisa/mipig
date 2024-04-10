@@ -10,10 +10,17 @@ img {
   max-width: 100%;
 }
 
+@keyframes bottom-wave {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-990px);
+  }
+}
 header {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   height: 8.5em;
@@ -29,6 +36,26 @@ header h1 img {
 header nav {
   display: none;
 }
+@media screen and (min-width: 1000px) {
+  header nav {
+    display: flex;
+    flex-direction: row;
+  }
+  header nav ul:first-child {
+    background-color: #b37474;
+    display: flex;
+    height: fit-content;
+    color: #fff;
+    padding: 1em 1em;
+    border-radius: 5px;
+  }
+  header nav ul:last-child {
+    display: flex;
+  }
+  header nav ul .sub-menu {
+    display: none;
+  }
+}
 
 #hamburger {
   display: block;
@@ -37,6 +64,11 @@ header nav {
   background-color: black;
   top: 0;
   right: 0;
+}
+@media screen and (min-width: 1000px) {
+  #hamburger {
+    display: none;
+  }
 }
 #hamburger span {
   display: block;
@@ -61,16 +93,33 @@ main {
   height: calc(100vh - 8.5em);
   overflow-x: hidden;
 }
-main:before {
+main::after {
+  background-image: url(/images/wave_01@3x.png);
+  background-color: transparent;
+  background-repeat: repeat-x;
+  background-size: contain;
+  background-position: left bottom;
+  display: block;
+  height: 72px;
+  width: 2970px;
+  content: "";
+  z-index: 400;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  animation: bottom-wave 15s linear infinite;
+}
+main::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  position: absolute;
   content: "";
   display: block;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2117647059);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 200;
 }
 main video {
   height: 100%;
@@ -90,30 +139,7 @@ main img {
   left: 0;
   z-index: 300;
 }
-main:after {
-  background-image: url(/images/wave_01@3x.png);
-  background-repeat: repeat-x;
-  background-size: contain;
-  background-position: left bottom;
-  display: block;
-  height: 72px;
-  width: 1980px;
-  content: "";
-  z-index: 400;
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  animation: bottom-wave 15s linear infinite;
-}
 
-@keyframes bottom-wave {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-990px);
-  }
-}
 #about {
   background-color: #FFF2F2;
 }
@@ -123,10 +149,16 @@ main:after {
 #about section:last-child {
   padding-bottom: 10em;
 }
+@media screen and (min-width: 1000px) {
+  #about section:last-child article {
+    flex-direction: row-reverse;
+  }
+}
 #about section h2 {
   position: relative;
-  margin: 0 auto;
   width: 80%;
+  margin: 0 auto;
+  padding-top: 0;
 }
 #about section h2::after {
   content: "";
@@ -148,24 +180,70 @@ main:after {
   padding: 0 0.5em;
   z-index: 1;
 }
-#about section > img {
+@media screen and (min-width: 1000px) {
+  #about section h2 {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 10em;
+  }
+  #about section h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, #b37474 4px, transparent 2px);
+    background-size: 10px 2px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 0;
+  }
+  #about section h2 img {
+    position: relative;
+    background-color: #FFF2F2;
+    padding: 0 0.5em;
+    z-index: 1;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #about section article {
+    display: flex;
+  }
+}
+#about section article img {
   display: block;
   padding: 4em 0;
   margin: 0 auto;
   width: 65vw;
 }
-#about div {
+#about section article div {
   width: 80vw;
   margin: 0 auto;
 }
-#about div span {
+#about section article div span {
   display: none;
 }
-#about div p {
+#about section article div span.sp_hide {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  #about section article div span.sp_hide {
+    display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #about section article div span {
+    display: block;
+  }
+}
+#about section article div p {
   font-size: 13px;
   line-height: 2em;
 }
-#about div strong {
+#about section article div strong {
   text-decoration: underline;
   text-decoration-color: #F2D291;
   text-decoration-thickness: 5px;
@@ -173,18 +251,19 @@ main:after {
   text-decoration-skip-ink: none;
   font-weight: normal;
 }
-#about div .more {
+#about section article div .more {
   display: block;
   font-size: 13px;
   padding: 1em 5em 1em 1em;
   max-width: 200px;
-  margin: 3em auto 0;
+  margin: 0 auto;
+  margin-top: 4em;
   background: #F2D291;
   position: relative;
   color: #403333;
   position: relative;
 }
-#about div .more:before {
+#about section article div .more:before {
   content: "";
   display: block;
   border: 1px #403333 solid;
@@ -194,7 +273,7 @@ main:after {
   top: -3px;
   left: -3px;
 }
-#about div .more i {
+#about section article div .more i {
   position: absolute;
   right: 1.5em;
 }
@@ -205,7 +284,7 @@ main:after {
 #slide.sp_hide {
   display: none;
 }
-@media screen and (min-width: 431px) {
+@media screen and (min-width: 600px) {
   #slide.sp_hide {
     display: none;
   }
@@ -216,9 +295,18 @@ main:after {
   background-size: 70%;
 }
 #family h2 {
+  position: relative;
   width: 80%;
   margin: 0 auto;
   padding-top: 10em;
+}
+@media screen and (min-width: 1000px) {
+  #family h2 {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 10em;
+  }
 }
 #family ul {
   width: 80vw;
@@ -226,23 +314,27 @@ main:after {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  padding: 5em 0 7em;
+}
+@media screen and (min-width: 1000px) {
+  #family ul {
+    flex-wrap: nowrap;
+  }
 }
 #family ul li {
   width: 45%;
-  margin-top: 10vw;
-}
-#family ul li:nth-child(3), #family ul li:nth-child(4) {
-  padding-bottom: 20vw;
 }
 #family ul li a {
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
   text-align: center;
 }
 #family ul li a h3 {
-  font-size: 1.3em;
-  padding-top: 3vw;
   color: #b37474;
+  font-size: 1.3em;
+  margin-top: 1.5em;
   font-weight: 500;
 }
 
@@ -250,32 +342,51 @@ main:after {
   background: #FFF2F2;
 }
 #service h2 {
+  position: relative;
   width: 80%;
   margin: 0 auto;
   padding-top: 10em;
 }
+@media screen and (min-width: 1000px) {
+  #service h2 {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 10em;
+  }
+}
 #service ul {
   width: 90vw;
   margin: 0 auto;
+  padding: 0 0 10em;
+}
+@media screen and (min-width: 1000px) {
+  #service ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 }
 #service ul li {
   display: flex;
+  display: flex;
   flex-direction: column-reverse;
+  align-items: center;
+  text-align: center;
   margin-top: 10em;
 }
 #service ul li.sp_hide {
   display: none;
 }
-@media screen and (min-width: 431px) {
+@media screen and (min-width: 600px) {
   #service ul li.sp_hide {
     display: flex;
   }
 }
-#service ul li:first-child {
-  margin-top: 5em;
-}
-#service ul li:last-child {
-  padding-bottom: 10em;
+@media screen and (min-width: 1000px) {
+  #service ul li {
+    width: 42vw;
+  }
 }
 #service ul li h3 {
   max-width: 300px;
@@ -290,7 +401,6 @@ main:after {
   color: #fff;
   line-height: 2em;
   font-weight: 700;
-  letter-spacing: 0em;
 }
 #service ul li h3 i {
   background: rgba(255, 255, 255, 0.231372549);
@@ -310,6 +420,7 @@ main:after {
   font-size: 13px;
   line-height: 2em;
   padding: 1.5em;
+  text-align: left;
 }
 #service ul li figure p + p {
   padding: 0 1em 1.5em;
@@ -322,23 +433,36 @@ main:after {
   padding-bottom: 10em;
 }
 #news h2 {
+  position: relative;
   width: 80%;
   margin: 0 auto;
   padding-top: 10em;
 }
+@media screen and (min-width: 1000px) {
+  #news h2 {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+    padding-top: 10em;
+  }
+}
 #news ul {
   width: 90vw;
   margin: 0 auto;
+  margin: 5em auto 0;
+}
+@media screen and (min-width: 1000px) {
+  #news ul {
+    display: flex;
+    flex-wrap: nowrap;
+  }
 }
 #news ul li {
   padding: 1em 0;
-  border-top: 0.5px solid #ccc;
+  border-top: 1px #ccc solid;
 }
-#news ul li:first-of-type {
-  margin-top: 5em;
-}
-#news ul li:last-of-type {
-  border-bottom: 0.5px solid #ccc;
+#news ul li:last-child {
+  border-bottom: 1px #ccc solid;
 }
 #news ul li article img {
   display: flex;
@@ -346,13 +470,14 @@ main:after {
 #news ul li article img.sp_hide {
   display: none;
 }
-@media screen and (min-width: 431px) {
+@media screen and (min-width: 600px) {
   #news ul li article img.sp_hide {
     display: flex;
   }
 }
 #news ul li article time {
   color: #b37474;
+  font-size: 1.2em;
 }
 #news ul li article p {
   font-size: 13px;
@@ -364,10 +489,12 @@ main:after {
   font-size: 13px;
   padding: 1em 5em 1em 1em;
   max-width: 200px;
-  margin: 5em auto 0;
+  margin: 0 auto;
+  margin-top: 4em;
   background: #F2D291;
   position: relative;
   color: #403333;
+  position: relative;
 }
 #news .more:before {
   content: "";
@@ -393,35 +520,30 @@ main:after {
 }
 #banner ul li {
   position: relative;
-  z-index: 100;
   margin-bottom: 2em;
 }
 #banner ul li p {
-  font-size: 1.6em;
+  font-size: 1.8em;
   color: #fff;
   position: absolute;
   top: 60%;
-  z-index: 300;
   width: fit-content;
   padding: 0.1em 0.4em;
   border-bottom: 1px #fff solid;
 }
-#banner ul li:first-child p {
+#banner ul li:nth-child(1) p {
   right: 7%;
 }
-#banner ul li:last-child p {
+#banner ul li:nth-child(2) p {
   left: 7%;
 }
-#banner ul li:before {
+#banner ul li::before {
   position: absolute;
   content: "";
   display: block;
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.2117647059);
-  z-index: 200;
-  top: 0;
-  left: 0;
 }
 #banner:before {
   position: absolute;
@@ -430,14 +552,13 @@ main:after {
   background-color: #b37474;
   width: 100%;
   height: 100%;
-  left: 0;
   top: 10%;
 }
 
 #instagram {
   background-color: #FFF2F2;
-  padding: 10em 0 15em;
   position: relative;
+  padding: 10em 0 15em;
   z-index: -1000;
   overflow-x: hidden;
 }
@@ -445,33 +566,58 @@ main:after {
   padding-bottom: 10em;
 }
 #instagram h2 {
-  margin: 0 auto;
   position: relative;
-  z-index: 300;
-  padding: 0 12em;
-  margin-bottom: 3em;
-}
-#instagram h2 img {
-  position: relative;
-  padding: 0 0.5em;
-  height: 10vh;
-  z-index: 300;
-  background-color: #FFF2F2;
+  width: 50%;
   margin: 0 auto;
+  padding-top: 0;
 }
 #instagram h2::after {
   content: "";
+  position: absolute;
   display: block;
-  width: 120%;
+  width: 190%;
   height: 2px;
   background-image: linear-gradient(to right, #b37474 4px, transparent 2px);
   background-size: 10px 2px;
-  position: absolute;
-  left: -10%;
+  left: -45%;
   top: 0;
   bottom: 0;
   margin: auto 0;
   z-index: 0;
+}
+#instagram h2 img {
+  position: relative;
+  background-color: #FFF2F2;
+  padding: 0 0.5em;
+  z-index: 1;
+}
+@media screen and (min-width: 1000px) {
+  #instagram h2 {
+    position: relative;
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 0;
+  }
+  #instagram h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, #b37474 4px, transparent 2px);
+    background-size: 10px 2px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    z-index: 0;
+  }
+  #instagram h2 img {
+    position: relative;
+    background-color: #FFF2F2;
+    padding: 0 0.5em;
+    z-index: 1;
+  }
 }
 #instagram .picture {
   position: relative;
@@ -480,16 +626,14 @@ main:after {
   position: absolute;
   display: block;
   z-index: -100;
-  width: 20vw;
 }
 #instagram .picture img:first-child {
   right: 3em;
-  top: -6em;
+  width: 20%;
 }
 #instagram .picture img:last-child {
   left: 3em;
   width: 10%;
-  top: -4em;
 }
 #instagram ul {
   width: 80vw;
@@ -497,24 +641,29 @@ main:after {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-content: space-between;
+  align-items: center;
+  padding-top: 5em;
+}
+@media screen and (min-width: 1000px) {
+  #instagram ul {
+    flex-wrap: nowrap;
+  }
 }
 #instagram ul li {
   width: 33%;
   padding: 0.5em;
-}
-#instagram ul li img {
-  z-index: 500;
 }
 #instagram .more {
   display: block;
   font-size: 13px;
   padding: 1em 5em 1em 1em;
   max-width: 200px;
-  margin: 3em auto 0;
+  margin: 0 auto;
+  margin-top: 4em;
   background: #F2D291;
   position: relative;
   color: #403333;
+  position: relative;
 }
 #instagram .more:before {
   content: "";
@@ -530,7 +679,7 @@ main:after {
   position: absolute;
   right: 1.5em;
 }
-#instagram:after {
+#instagram::after {
   background-image: url(/images/wave_02@3x.png);
   background-color: transparent;
   background-repeat: repeat-x;
@@ -538,7 +687,7 @@ main:after {
   background-position: left bottom;
   display: block;
   height: 72px;
-  width: 1980px;
+  width: 2970px;
   content: "";
   z-index: 400;
   position: absolute;
@@ -552,14 +701,30 @@ footer {
   padding-top: 3em;
   padding-bottom: 3em;
   color: #fff;
-  position: relative;
 }
 footer > div {
   margin: 0 auto;
   max-width: 200px;
+  padding-bottom: 5em;
+}
+@media screen and (min-width: 1000px) {
+  footer > div {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 }
 footer > div a {
   display: block;
+}
+@media screen and (min-width: 1000px) {
+  footer > div a {
+    width: 40vw;
+  }
+}
+footer > div a span {
+  display: block;
+  margin-top: 1em;
 }
 footer > div a:first-child {
   font-size: 8px;
@@ -567,35 +732,37 @@ footer > div a:first-child {
 }
 footer > div a:last-child {
   font-size: 8px;
-  margin: 5em auto;
+  margin: 5em auto 0;
   padding: 1.5em 0;
   text-align: center;
   line-height: 2em;
   border-radius: 1em;
   background-color: #b37474;
 }
+@media screen and (min-width: 1000px) {
+  footer > div a:last-child {
+    margin: 0 auto;
+  }
+}
 footer > div a:last-child strong {
   display: block;
-  font-size: 15px;
-}
-footer aside {
-  font-size: 14px;
-  width: 90vw;
-  margin: 0 auto;
+  font-size: 2em;
 }
 footer aside #link {
-  border-top: 1px #fff solid;
-  border-bottom: 1px #fff solid;
-  display: flex;
-  font-size: 0.9em;
+  width: 90vw;
+  margin: 0 auto;
+  border-top: 1px #ccc solid;
+  border-bottom: 1px #ccc solid;
+  font-size: 1.2em;
   font-weight: 500;
-  padding: 3em 1em;
+  display: flex;
+  padding: 3em;
 }
 footer aside #link > div {
   width: 50%;
 }
 footer aside #link > div li {
-  padding: 0.6em 0;
+  padding: 1em 0;
 }
 footer aside #link .sp_hide {
   display: flex;
@@ -603,29 +770,36 @@ footer aside #link .sp_hide {
 footer aside #link .sp_hide.sp_hide {
   display: none;
 }
-@media screen and (min-width: 431px) {
+@media screen and (min-width: 600px) {
   footer aside #link .sp_hide.sp_hide {
     display: flex;
   }
 }
 footer aside #social {
-  padding: 1em 1em 0;
+  width: 80vw;
+  margin: 0 auto;
+  margin-top: 0.7em;
+  font-size: 2em;
 }
 footer aside #social ul {
   display: flex;
   justify-content: flex-end;
 }
 footer aside #social ul li:last-child {
-  padding-left: 0.5em;
+  margin-left: 0.7em;
 }
-footer aside p {
+footer aside #copr {
+  width: 80vw;
+  margin: 0 auto;
+}
+footer aside #copr p {
   font-size: 8px;
   text-align: center;
-  padding: 3em 1em 0;
+  margin-top: 3em;
   line-height: 2em;
 }
-footer aside h6 {
-  padding-top: 2em;
+footer aside #copr h6 {
   font-size: 7px;
+  margin-top: 2em;
   text-align: center;
 }
