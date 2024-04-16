@@ -4,8 +4,8 @@
     h2 {
         @include mixins.title-sp();
 
-        @include mixins.mq(pc){
-        @include mixins.title-pc();
+        @include mixins.mq(pc) {
+            @include mixins.title-pc();
         }
     }
 
@@ -13,30 +13,43 @@
         @include mixins.box-width();
         padding: 0 0 10em;
 
-        @include mixins.mq(pc){
+        @include mixins.mq(pc) {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between
         }
 
         li {
-            @include mixins.sp-hide();
             @include mixins.flex-column();
             margin-top: 10em;
-            // TODO: 最初の子要素のmargin-topを除外する
 
-            @include mixins.mq(pc){
+            &:first-child {
+                margin-top: 5em;
+
+            }
+
+            &:nth-child(-n+2) {
+                @include mixins.mq(pc) {
+                    margin-top: 6em;
+                }
+            }
+
+            @include mixins.mq(pc) {
+                margin-top: 12em;
                 width: 42vw;
+                justify-content: space-between
             }
 
             h3 {
-                max-width: 300px;
-                font-size: 2em;
+                // max-width: 300px;
+                font-size: 1.5em;
                 background: variables.$sub-color;
                 margin: 0 auto;
                 padding: 0.2em 3em;
                 border-radius: 1.5em;
                 position: relative;
+                @include mixins.hover-tra ();
+
 
                 a {
                     color: #fff;
@@ -65,8 +78,8 @@
 
             figure {
 
+
                 p {
-                    font-size: variables.$base-font-size;
                     line-height: 2em;
                     padding: 1.5em;
                     text-align: left;

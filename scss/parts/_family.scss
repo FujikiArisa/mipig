@@ -6,9 +6,9 @@
     h2 {
         @include mixins.title-sp();
 
-        @include mixins.mq(pc){
+        @include mixins.mq(pc) {
             @include mixins.title-pc();
-            }
+        }
     }
 
     ul {
@@ -22,6 +22,23 @@
 
         li {
             width: 45%;
+            @include mixins.hover-tra ();
+
+
+            @include mixins.mq(pc) {
+                margin: 1em;
+            }
+
+            &:nth-child(n + 3) {
+                padding-top: 5em;
+
+            @include mixins.mq(pc) {
+                padding-top: 0;
+            }
+                
+
+
+            }
 
 
             a {
@@ -32,6 +49,10 @@
                     font-size: 1.3em;
                     margin-top: 1.5em;
                     font-weight: 500;
+
+                    @include mixins.mq(pc) {
+                        font-size: 1.5em;
+                    }
                 }
 
             }

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>mipig MICRO PIG FARM</title>
     <!-- font awsome -->
-    <link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/fontawesome/css/brands.css">
+    <link rel="stylesheet" href="/fontawesome/css/solid.css">
+
     <!-- material symbols -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -36,22 +39,31 @@
                 <li><a href="https://mipig.co.jp/service/family/reservation/">お迎えのご案内</a></li>
             </ul>
             <ul>
-                <li><a href="https://mipig.co.jp/service/"><span>サービス一覧</span></a></li>
-                <ul class="sub-menu">
-                    <li><a href="https://mipig.co.jp/service/farm/"></a>mipig + farm</li>
-                    <li><a href="https://mipig.co.jp/service/cafe/"></a>mipig + cafe</li>
-                    <li><a href="https://mipig.co.jp/service/food/"></a>mipig + food</li>
-                    <li><a href="https://mipig.co.jp/service/app/"></a>mipig owners</li>
-                    <li><a href="https://mipig.co.jp/service/channel/"></a>mipig + channel</li>
-                    <li><a href="https://mipig.co.jp/service/pro/"></a>mipig + pro</li>
-                    <li><a href="https://mipig.co.jp/service/family/"></a>mipig + family</li>
-                </ul>
+                <li><a href="https://mipig.co.jp/service/">
+                        <span>サービス一覧</span>
+                        <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href="https://mipig.co.jp/service/farm/"></a>mipig + farm</li>
+                        <li><a href="https://mipig.co.jp/service/cafe/"></a>mipig + cafe</li>
+                        <li><a href="https://mipig.co.jp/service/food/"></a>mipig + food</li>
+                        <li><a href="https://mipig.co.jp/service/app/"></a>mipig owners</li>
+                        <li><a href="https://mipig.co.jp/service/channel/"></a>mipig + channel</li>
+                        <li><a href="https://mipig.co.jp/service/pro/"></a>mipig + pro</li>
+                        <li><a href="https://mipig.co.jp/service/family/"></a>mipig + family</li>
+                    </ul>
+                </li>
+
                 <li><a href="https://mipig.co.jp/faq/"><span>よくあるご質問</span></a></li>
-                <li><a href="https://mipig.co.jp/contact/"><span>お問い合わせ</span></a></li>
-                <ul>
-                    <li class="sub-menu"><a href=""></a>個人の方のお問い合わせ</li>
-                    <li><a href=""></a>法人の方のお問い合わせ</li>
-                </ul>
+
+                <li><a href="https://mipig.co.jp/contact/">
+                        <span>お問い合わせ</span>
+                        <i class="fa-solid fa-chevron-down"></i></a>
+                    <ul class="sub-menu">
+                        <li><a href=""></a>個人の方のお問い合わせ</li>
+                        <li><a href=""></a>法人の方のお問い合わせ</li>
+                    </ul>
+                </li>
+
                 <li><a href="https://mipig.co.jp/employment/"><span>採用情報</span></a></li>
             </ul>
         </nav>
@@ -73,8 +85,8 @@
                     <p>イギリス生まれで、成長した時の体重が
                         <strong>18~40kgまで</strong>
                         のブタさんの総称です。
+                        <br>mipigのブタさんはイギリス生まれの親ブタさんの系統を持ち、大人で20kgほどの大きさです。
                     </p>
-                    <p>mipigのブタさんはイギリス生まれの親ブタさんの系統を持ち、大人で20kgほどの大きさです。</p>
                     <a href="https://mipig.co.jp/micropig/" class="more">Learn more
                         <i class="fa-solid fa-chevron-right"></i>
                     </a>
@@ -104,7 +116,7 @@
         <!-- mipigとは end -->
     </section>
     <section id="slide">
-        <div><img src="/images/slide/image@3x.jpg" alt=""></div>
+        <span></span>
     </section>
     <!-- スライド end -->
     <section id="family">
@@ -271,13 +283,13 @@
             <li>
                 <a href="https://mipig.co.jp/faq/">
                     <img src="/images/banner/faq.jpg" alt="">
-                    <p>よくあるご質問</p>
+                    <span>よくあるご質問</span>
                 </a>
             </li>
             <li>
                 <a href="https://mipig.co.jp/contact/">
                     <img src="/images/banner/contact.jpg" alt="">
-                    <p>お問い合わせ</p>
+                    <span>お問い合わせ</span>
                 </a>
             </li>
         </ul>
@@ -317,89 +329,99 @@
     </section>
     <!-- Instagram end -->
     <footer>
-        <div>
+        <div id="footer-logo">
             <a href="#">
                 <img src="/images/logo_white.svg" alt="">
                 <span>日本初のマイクロブタファーム・mipig(マイピッグ)</span>
             </a>
             <a href="https://mipig.cafe/">
-                <strong>mipig + cafe</strong>
-                <span>日本初の、マイクロブタとふれあえるカフェ</span>
+                <div>
+                    <strong>mipig + cafe</strong>
+                    <span>日本初の、マイクロブタとふれあえるカフェ</span>
+                </div>
             </a>
         </div>
-
+        <div id="footer-service">
+            <span>サービス一覧</span>
+            <ul>
+                <li>
+                    <a href="https://mipig.co.jp/service/farm/">
+                        <span class="material-symbols-outlined">agriculture</span>
+                        <span>mipig + farm</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://mipig.co.jp/service/family/">
+                        <span class="material-symbols-outlined">diversity_1</span>
+                        <span>mipig + family</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://mipig.co.jp/service/food/">
+                        <span class="material-symbols-outlined">grocery</span>
+                        <span>mipig + food</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://mipig.co.jp/service/app/">
+                        <span class="material-symbols-outlined">forum</span>
+                        <span>mipig owners</span>
+                    </a>
+                </li>
+            </ul>
+            <a href="">
+                <i class="fa-solid fa-chevron-right"></i>
+                すべて表示</a>
+        </div>
         <aside>
-            <div id="link">
-                <div class="sp_hide">
-                    <span>サービス一覧</span>
-                    <ul>
-                        <li>
-                            <a href="https://mipig.co.jp/service/farm/">
-                                <span class="material-symbols-outlined">agriculture</span>
-                                <span>mipig + farm</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://mipig.co.jp/service/family/">
-                                <span class="material-symbols-outlined">diversity_1</span>
-                                <span>mipig + family</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://mipig.co.jp/service/food/">
-                                <span class="material-symbols-outlined">grocery</span>
-                                <span>mipig + food</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://mipig.co.jp/service/app/">
-                                <span class="material-symbols-outlined">forum</span>
-                                <span>mipig owners</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
+            <div id="footer-link">
                 <div>
                     <ul>
                         <li>
-                            <a href="https://mipig.co.jp/micropig/"><span>マイクロブタさんとは</span></a>
+                            <a href="https://mipig.co.jp/micropig/">マイクロブタさんとは</a>
                         </li>
                         <li>
-                            <a href="https://mipig.co.jp/aboutus/"><span>mipigとは</span></a>
+                            <a href="https://mipig.co.jp/aboutus/">mipigとは</a>
                         </li>
                         <li>
-                            <a href="https://mipig.co.jp/csr/"><span>CSR活動</span></a>
+                            <a href="https://mipig.co.jp/csr/">CSR活動</a>
                         </li>
                         <li>
-                            <a href="https://mipig.co.jp/foster/"><span>里親募集</span></a>
+                            <a href="https://mipig.co.jp/foster/">里親募集</a>
                         </li>
                     </ul>
                     <ul>
                         <li>
-                            <a href="https://mipig.co.jp/service/"><span>サービス一覧</span></a>
+                            <a href="https://mipig.co.jp/service/">サービス一覧</a>
                         </li>
                         <li class="sp_hide">
                             <ul>
                                 <li>
+                                    <i class="fa-solid fa-caret-right"></i>
                                     <a href="https://mipig.co.jp/service/farm/">mipig + farm</a>
                                 </li>
                                 <li>
+                                    <i class="fa-solid fa-caret-right"></i>
                                     <a href="https://mipig.co.jp/service/cafe/">mipig + cafe</a>
                                 </li>
                                 <li>
+                                    <i class="fa-solid fa-caret-right"></i>
                                     <a href="https://mipig.co.jp/service/food/">mipig + food</a>
                                 </li>
                                 <li>
+                                    <i class="fa-solid fa-caret-right"></i>
                                     <a href="https://mipig.co.jp/service/app/">mipig owners</a>
                                 </li>
                                 <li>
+                                    <i class="fa-solid fa-caret-right"></i>
                                     <a href="https://mipig.co.jp/service/channel/">mipig + channel</a>
                                 </li>
                                 <li>
+                                    <i class="fa-solid fa-caret-right"></i>
                                     <a href="https://mipig.co.jp/service/pro/">mipig + pro</a>
                                 </li>
                                 <li>
+                                    <i class="fa-solid fa-caret-right"></i>
                                     <a href="https://mipig.co.jp/service/family/">mipig + family</a>
                                 </li>
                                 <li class="sp_hide">
@@ -408,12 +430,15 @@
                                             <a href="https://mipig.co.jp/service/family/foreword/">お迎えをご検討中の方へ</a>
                                         </li>
                                         <li>
+                                            <i class="fa-solid fa-caret-right"></i>
                                             <a href="https://mipig.co.jp/service/family/flow/">お迎えまでの流れ</a>
                                         </li>
                                         <li>
+                                            <i class="fa-solid fa-caret-right"></i>
                                             <a href="https://mipig.co.jp/service/family/voice/">オーナー様の声</a>
                                         </li>
                                         <li>
+                                            <i class="fa-solid fa-caret-right"></i>
                                             <a href="https://mipig.co.jp/service/family/reservation/">お迎えのご予約</a>
                                         </li>
                                     </ul>
@@ -423,14 +448,16 @@
                     </ul>
                     <ul>
                         <li>
-                            <a href="https://mipig.co.jp/contact/"><span>お問い合わせ</span></a>
+                            <a href="https://mipig.co.jp/contact/">お問い合わせ</a>
                         </li>
                         <li class="sp_hide">
                             <ul>
                                 <li>
+                                    <i class="fa-solid fa-caret-right"></i>
                                     <a href="https://mipig.co.jp/contact/individual/">個人の方のお問い合わせ</a>
                                 </li>
                                 <li>
+                                    <i class="fa-solid fa-caret-right"></i>
                                     <a href="https://mipig.co.jp/contact/corporation/">法人の方のお問い合わせ</a>
                                 </li>
                             </ul>
@@ -440,29 +467,29 @@
                 <div>
                     <ul>
                         <li>
-                            <a href="https://mipig.co.jp/news/"><span>ニュース</span></a>
+                            <a href="https://mipig.co.jp/news/">ニュース</a>
                         </li>
                         <li>
-                            <a href="https://mipig.co.jp/faq/"><span>よくあるご質問</span></a>
+                            <a href="https://mipig.co.jp/faq/">よくあるご質問</a>
                         </li>
                         <li>
-                            <a href="https://mipig.co.jp/aboutus/company/"><span>会社概要</span></a>
+                            <a href="https://mipig.co.jp/aboutus/company/">会社概要</a>
                         </li>
                         <li>
-                            <a href="https://mipig.co.jp/privacy/"><span>プライバシーポリシー</span></a>
+                            <a href="https://mipig.co.jp/privacy/">プライバシーポリシー</a>
                         </li>
                         <li>
-                            <a href="https://mipig.co.jp/infosecurity/"><span>情報セキュリティ基本方針</span></a>
+                            <a href="https://mipig.co.jp/infosecurity/">情報セキュリティ基本方針</a>
                         </li>
                         <li>
-                            <a href="https://mipig.co.jp/employment/"><span>採用情報</span></a>
+                            <a href="https://mipig.co.jp/employment/">採用情報</a>
                         </li>
                     </ul>
                 </div>
             </div>
             <div id="social">
                 <ul>
-                    <li><a href="https://bit.ly/2yhJ8ja">𝕏</a></li>
+                    <li><a href="https://bit.ly/2yhJ8ja"><i class="fa-brands fa-x-twitter"></i></a></li>
                     <li><a href="https://bit.ly/39qtvTr"><i class="fa-brands fa-instagram"></i></a></li>
                 </ul>
             </div>

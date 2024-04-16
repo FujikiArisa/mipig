@@ -4,33 +4,37 @@ footer {
     padding-bottom: 3em;
     color: #fff;
 
-    >div {
+    #footer-logo {
         margin: 0 auto;
         max-width: 200px;
         padding-bottom: 5em;
 
         @include mixins.mq(pc) {
+            max-width: none;
             display: flex;
             flex-wrap: nowrap;
+            align-items: center;
             justify-content: space-between;
+            @include mixins.box-width(8);
+
         }
 
 
         a {
             display: block;
-            
-            @include mixins.mq(pc) {
-                width: 40vw;
-            }
-
-            span {
-                display: block;
-                margin-top: 1em;
-            }
 
             &:first-child {
                 font-size: 8px;
                 text-align: center;
+
+                @include mixins.mq(pc) {
+                    font-size: 15px;
+                }
+
+                span {
+                    display: block;
+                    margin-top: 1em;
+                }
             }
 
             &:last-child {
@@ -41,42 +45,158 @@ footer {
                 line-height: 2em;
                 border-radius: 1em;
                 background-color: variables.$sub-color;
+                height: 100%;
 
                 @include mixins.mq(pc) {
-                    margin: 0 auto;
+                    margin: 0;
+                    font-size: 15px;
+                    height: 100%;
+                    width: 400px;
                 }
-
-
 
                 strong {
                     display: block;
                     font-size: 2em;
+
                 }
             }
         }
     }
 
-    aside {
+    #footer-service {
+        @include mixins.sp-hide();
+        display: none;
+        position: relative;
 
-        #link {
+        @include mixins.mq(pc) {
+            display: block;
+        }
+
+        @include mixins.box-width();
+        padding: 0 3em 3em;
+
+        ul {
+            margin: 3em 0;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            li {
+                width: 10vw;
+
+                a {
+                    span {
+                        display: block;
+                        text-align: center;
+                        margin: 0 auto;
+
+                        &:first-child {
+                            font-size: 4em;
+                            position: relative;
+                            background-color: #fff;
+                            color: #734E4A;
+                            height: 1.8em;
+                            width: 1.8em;
+                            line-height: 1.8em;
+                            border-radius: 0.9em;
+                        }
+
+                        &:last-child {
+                            margin-top: 1em;
+                        }
+                    }
+                }
+            }
+        }
+
+        >a {
+            position: absolute;
+            right: 0;
+            padding-right: 3em;
+
+            i {
+                font-size: .7em;
+                margin-right: .5em;
+                border: 1px #fff solid;
+                width: 1.5em;
+                height: 1.5em;
+                line-height: 1.5em;
+                border-radius: 0.75em;
+                text-align: center;
+            }
+        }
+    }
+
+    aside {
+        #footer-link {
             @include mixins.box-width();
             border-top: variables.$border;
             border-bottom: variables.$border;
-            font-size: 1.2em;
-            font-weight: 500;
+            font-weight: 700;
             display: flex;
-            padding: 3em;
+            padding: 2em 1em;
+            justify-content: space-between;
+
+
+            @include mixins.mq(pc) {
+                padding: 2em 3em;
+            }
 
             >div {
                 width: 50%;
 
-                li {
-                    padding: 1em 0;
+                @include mixins.mq(pc) {
+                    display: flex;
+                    justify-content: space-between;
                 }
-            }
 
-            .sp_hide {
-                @include mixins.sp-hide();
+                >ul>li {
+                    padding: 1em 0;
+
+
+                    &:has(i) {
+                        padding-top: 0;
+
+                        ul li {
+                            padding: 1em 0;
+                        }
+                    }
+                }
+
+                &:first-child {
+                    @include mixins.mq(pc) {
+                        width: 75%;
+                    }
+
+                    >ul {
+                        @include mixins.mq(pc) {
+                            width: 33.333%;
+                        }
+
+
+                        .sp_hide {
+                            display: none;
+
+                            @include mixins.mq(pc) {
+                                display: block;
+                            }
+
+                            li:has(> i) {
+                                font-weight: 400;
+                            }
+
+                            i {
+                                margin-right: .5em;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    @include mixins.mq(pc) {
+                        width: 25%;
+                    }
+                }
             }
         }
 
@@ -99,14 +219,14 @@ footer {
             @include mixins.box-width(8);
 
             p {
-                font-size: 8px;
+                font-size: 13px;
                 text-align: center;
                 margin-top: 3em;
                 line-height: 2em;
             }
 
             h6 {
-                font-size: 7px;
+                font-size: 10px;
                 margin-top: 2em;
                 text-align: center;
             }

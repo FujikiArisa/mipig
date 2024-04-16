@@ -5,7 +5,8 @@ $font-color: #403333;
 $border: 1px #ccc solid;
 // カラー
 
-$base-font-size: 13px;
+$sp-font-size: 13px;
+$pc-font-size: 17px;
 // フォントサイズ
 
 $padding-title: 10em 3em 0;
@@ -17,7 +18,44 @@ $box-width: (
 // 余白
 
 $breakpoints: (
-    "mobile": "screen and (min-width: 431px)",
+    // "mobile": "screen and (min-width: 431px)",
     "tablet": "screen and (min-width: 600px)",
     "pc": "screen and (min-width: 1000px)",
 ) !default;
+
+// ブレイクポイント
+
+
+
+
+// TODO
+
+
+// 画像の書き出し_ロゴ・スライド・足跡
+
+// ヘッダー
+// フェードでサブメニューを表示させる
+
+// about
+// moreボタンのホバーアクションを他のでも試す
+// 破線を追加
+
+// family
+// ホバーアクション
+
+// service
+// ホバーアクション
+// 足跡の画像を追加
+
+// news
+// ホバーアクション
+
+// contace
+// リンクタグに画像が含まれていない
+
+// instagram
+// moreボタンが機能してない
+
+// footer
+// ホバーアクション
+// cssを整理する

@@ -1,3 +1,19 @@
 #slide {
+    overflow-x: hidden;
+    width: 100vw;
+
+    span {
         @include mixins.sp-hide(none);
+
+        @include mixins.mq(pc) {
+            background-image: url(/images/slide/image@3x.jpg);
+            background-repeat: repeat-x;
+            background-size: contain;
+            background-position: left bottom;
+            height: 190px;
+            width: 5326px;
+            display: block;
+            animation: slide 20s linear infinite;
+        }
+    }
 }

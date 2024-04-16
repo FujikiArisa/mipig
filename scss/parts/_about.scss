@@ -2,17 +2,29 @@
     background-color: variables.$main-color;
 
     section {
-        padding-top: 10em;
+        padding-top: 5em;
+
+        &:first-child img{
+            &:first-child{
+                padding-right: 3%;
+            }
+        }
 
         &:last-child {
             padding-bottom: 10em;
+            padding-top: 10em;
+
 
             article {
                 @include mixins.mq(pc) {
-                    flex-direction: row-reverse
+                    flex-direction: row-reverse;
+                    justify-content: space-between;
+                }
+
+                img{
+                    padding-left: 3%;
                 }
             }
-
         }
 
         h2 {
@@ -23,37 +35,57 @@
                 @include mixins.title-border(0, 0);
                 @include mixins.title-pc();
             }
-
         }
 
         article {
             @include mixins.mq(pc) {
+                padding-top: 7em;
                 display: flex;
+                @include mixins.box-width(9);
+                justify-content: space-between;
             }
 
             img {
                 display: block;
-                padding: 4em 0;
-                margin: 0 auto;
-                width: 65vw
+                margin: 5em auto;
+                width: 65vw;
+
+                
+
+                @include mixins.mq(pc) {
+                    width: 41vw;
+                    margin: 0;
+                }
 
             }
 
             div {
                 @include mixins.box-width(8);
-                
+
+                @include mixins.mq(pc) {
+                    margin: 0;
+                    width: 40vw;
+                    position: relative;
+                }
 
                 span {
                     @include mixins.sp-hide(none);
 
-                    @include mixins.mq(pc){
+                    @include mixins.mq(pc) {
                         display: block;
+                        font-size: 1.3em;
+                        font-weight: 500;
+                        color: variables.$accent-color;
+                        line-height: 1.5em;
                     }
                 }
 
                 p {
-                    font-size: variables.$base-font-size;
                     line-height: 2em;
+
+                    @include mixins.mq(pc) {
+                        padding-top: 2em;
+                    }
                 }
 
                 strong {
@@ -63,10 +95,20 @@
                     text-underline-offset: -2px;
                     text-decoration-skip-ink: none;
                     font-weight: normal;
+
+
                 }
 
                 .more {
                     @include mixins.more();
+
+                    @include mixins.mq(pc) {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        margin: auto;
+                    }
                 }
 
             }

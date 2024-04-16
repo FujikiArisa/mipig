@@ -43,6 +43,7 @@
     height: 100%;
     background: #00000036;
 }
+
 // 黒いフィルター
 
 @mixin wave($background-image) {
@@ -59,12 +60,12 @@
         z-index: 400;
         position: absolute;
         left: 0;
-        bottom: -1px;
+        bottom: -5px;
         animation: bottom-wave 15s linear infinite;
     }
 }
 
-
+// 波
 
 @mixin title-sp($width: 80%, $padding-top: 10em) {
     position: relative;
@@ -112,15 +113,15 @@
 
 @mixin more($margin-top: 4em) {
     display: block;
-    font-size: variables.$base-font-size;
     padding: 1em 5em 1em 1em;
-    max-width: 200px;
     margin: 0 auto;
     margin-top: $margin-top;
-    background: variables.$accent-color;
+    background-color: variables.$accent-color;
     position: relative;
     color: variables.$font-color;
-    position: relative;
+    max-width: 15em;
+    @include hover-tra();
+
 
     &:before {
         content: "";
@@ -141,20 +142,34 @@
 
 // moreボタン
 
-@mixin mq($breakpoint) {
-    @media #{map-get(variables.$breakpoints, $breakpoint)} {
-        @content;
+@mixin hover-tra() {
+    transition: .3s;
+
+    &:hover {
+        opacity: .7;
     }
 }
 
-@mixin sp-hide($display: flex) {
-    display: $display;
-    
-    &.sp_hide {
-        display: none;
+// ホバーで半透明にする
 
-        @include mq(tablet) {
-            display: $display;
+
+
+
+
+@mixin mq($breakpoint) {         //名前はmq、diaplayを可変
+    @media #{map-get(variables.$breakpoints, $breakpoint)} {  //メディアスクリーン?
+        @content;                                             
+    }
+}
+
+@mixin sp-hide($display: flex) { //名前はsp-hide、デフォルトでdisplay flex
+    display: $display;           //displayを可変
+
+    &.sp_hide {                  //クラス名sp-hideの子要素をセレクターとする
+        display: none;           //display noneで非表示
+
+        @include mq(tablet) {    //メディアスクリーン
+            display: $display;   //displayを可変
         }
     }
 }

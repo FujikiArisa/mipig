@@ -18,31 +18,54 @@
             flex-wrap: nowrap;
         }
 
-        li {
+        li article {
             padding: 1em 0;
             border-top: variables.$border;
 
-            &:last-child {
-                border-bottom: variables.$border;
+            @include mixins.mq(pc) {
+                border-top: none;
+                margin: 1em;
             }
 
-            article {
-                img {
-                    @include mixins.sp-hide();
-                }
+            &:last-child {
+                border-bottom: variables.$border;
 
-                time {
-                    color: variables.$sub-color;
-                    font-size: 1.2em;
+                @include mixins.mq(pc) {
+                    border-bottom: none;
                 }
+            }
 
-                p {
-                    font-size: variables.$base-font-size;
-                    font-weight: 500;
-                    margin-top: .3em;
+            img {
+                @include mixins.sp-hide();
+                display: none;
+
+                @include mixins.mq(pc) {
+                    display: block;
+                    border: 1px #403333 solid;
+                    border-radius: 15px;
+                }
+            }
+
+            time {
+                color: variables.$sub-color;
+                font-size: 1.2em;
+                display: block;
+
+                @include mixins.mq(pc) {
+                    margin-top: .7em;
+                }
+            }
+
+            p {
+                font-weight: 500;
+                margin-top: .3em;
+
+                @include mixins.mq(pc) {
+                    margin-top: .5em;
                 }
             }
         }
+
     }
 
     .more {

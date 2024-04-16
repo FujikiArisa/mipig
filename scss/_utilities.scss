@@ -4,10 +4,27 @@ html {
     font-weight: 400;
     font-style: normal;
     color: #403333;
+
+
+    font-size: variables.$sp-font-size;
+
+    @include mixins.mq(pc){
+        font-size: variables.$pc-font-size;
+    }
 }
 
 img {
     max-width: 100%;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-1775px)
+    }
 }
 
 @keyframes bottom-wave {

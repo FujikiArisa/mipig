@@ -4,12 +4,26 @@ html {
   font-weight: 400;
   font-style: normal;
   color: #403333;
+  font-size: 13px;
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 17px;
+  }
 }
 
 img {
   max-width: 100%;
 }
 
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-1775px);
+  }
+}
 @keyframes bottom-wave {
   from {
     transform: translateX(0);
@@ -39,21 +53,51 @@ header nav {
 @media screen and (min-width: 1000px) {
   header nav {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
-  header nav ul:first-child {
-    background-color: #b37474;
+  header nav > ul:first-child {
     display: flex;
     height: fit-content;
+    justify-content: flex-end;
     color: #fff;
-    padding: 1em 1em;
+  }
+  header nav > ul:first-child li {
+    background-color: #b37474;
+    width: 13em;
+    padding: 0.5em 2em;
     border-radius: 5px;
+    margin-left: 2.5em;
+    text-align: center;
+    transition: 0.3s;
   }
-  header nav ul:last-child {
+  header nav > ul:first-child li:hover {
+    opacity: 0.7;
+  }
+  header nav > ul:first-child li:first-child {
+    margin-left: 0;
+  }
+  header nav > ul:last-child {
     display: flex;
+    margin-top: 1em;
   }
-  header nav ul .sub-menu {
+  header nav > ul:last-child > li {
+    margin-left: 2.5em;
+  }
+  header nav > ul:last-child > li:hover .sub-menu {
+    display: block;
+  }
+  header nav > ul:last-child > li:first-child {
+    margin-left: 0;
+  }
+  header nav > ul:last-child > li .sub-menu {
     display: none;
+    position: absolute;
+    z-index: 1000;
+    background-color: #FFF2F2;
+    transition: 1s;
+  }
+  header nav > ul:last-child > li .sub-menu li {
+    padding: 1em 1em;
   }
 }
 
@@ -106,7 +150,7 @@ main::after {
   z-index: 400;
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: -5px;
   animation: bottom-wave 15s linear infinite;
 }
 main::before {
@@ -144,15 +188,23 @@ main img {
   background-color: #FFF2F2;
 }
 #about section {
-  padding-top: 10em;
+  padding-top: 5em;
+}
+#about section:first-child img:first-child {
+  padding-right: 3%;
 }
 #about section:last-child {
   padding-bottom: 10em;
+  padding-top: 10em;
 }
 @media screen and (min-width: 1000px) {
   #about section:last-child article {
     flex-direction: row-reverse;
+    justify-content: space-between;
   }
+}
+#about section:last-child article img {
+  padding-left: 3%;
 }
 #about section h2 {
   position: relative;
@@ -210,18 +262,34 @@ main img {
 }
 @media screen and (min-width: 1000px) {
   #about section article {
+    padding-top: 7em;
     display: flex;
+    width: 90vw;
+    margin: 0 auto;
+    justify-content: space-between;
   }
 }
 #about section article img {
   display: block;
-  padding: 4em 0;
-  margin: 0 auto;
+  margin: 5em auto;
   width: 65vw;
+}
+@media screen and (min-width: 1000px) {
+  #about section article img {
+    width: 41vw;
+    margin: 0;
+  }
 }
 #about section article div {
   width: 80vw;
   margin: 0 auto;
+}
+@media screen and (min-width: 1000px) {
+  #about section article div {
+    margin: 0;
+    width: 40vw;
+    position: relative;
+  }
 }
 #about section article div span {
   display: none;
@@ -237,11 +305,19 @@ main img {
 @media screen and (min-width: 1000px) {
   #about section article div span {
     display: block;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #F2D291;
+    line-height: 1.5em;
   }
 }
 #about section article div p {
-  font-size: 13px;
   line-height: 2em;
+}
+@media screen and (min-width: 1000px) {
+  #about section article div p {
+    padding-top: 2em;
+  }
 }
 #about section article div strong {
   text-decoration: underline;
@@ -253,15 +329,17 @@ main img {
 }
 #about section article div .more {
   display: block;
-  font-size: 13px;
   padding: 1em 5em 1em 1em;
-  max-width: 200px;
   margin: 0 auto;
   margin-top: 4em;
-  background: #F2D291;
+  background-color: #F2D291;
   position: relative;
   color: #403333;
-  position: relative;
+  max-width: 15em;
+  transition: 0.3s;
+}
+#about section article div .more:hover {
+  opacity: 0.7;
 }
 #about section article div .more:before {
   content: "";
@@ -277,16 +355,41 @@ main img {
   position: absolute;
   right: 1.5em;
 }
+@media screen and (min-width: 1000px) {
+  #about section article div .more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+}
 
 #slide {
+  overflow-x: hidden;
+  width: 100vw;
+}
+#slide span {
   display: none;
 }
-#slide.sp_hide {
+#slide span.sp_hide {
   display: none;
 }
 @media screen and (min-width: 600px) {
-  #slide.sp_hide {
+  #slide span.sp_hide {
     display: none;
+  }
+}
+@media screen and (min-width: 1000px) {
+  #slide span {
+    background-image: url(/images/slide/image@3x.jpg);
+    background-repeat: repeat-x;
+    background-size: contain;
+    background-position: left bottom;
+    height: 190px;
+    width: 5326px;
+    display: block;
+    animation: slide 20s linear infinite;
   }
 }
 
@@ -324,6 +427,23 @@ main img {
 }
 #family ul li {
   width: 45%;
+  transition: 0.3s;
+}
+#family ul li:hover {
+  opacity: 0.7;
+}
+@media screen and (min-width: 1000px) {
+  #family ul li {
+    margin: 1em;
+  }
+}
+#family ul li:nth-child(n+3) {
+  padding-top: 5em;
+}
+@media screen and (min-width: 1000px) {
+  #family ul li:nth-child(n+3) {
+    padding-top: 0;
+  }
 }
 #family ul li a {
   display: flex;
@@ -336,6 +456,11 @@ main img {
   font-size: 1.3em;
   margin-top: 1.5em;
   font-weight: 500;
+}
+@media screen and (min-width: 1000px) {
+  #family ul li a h3 {
+    font-size: 1.5em;
+  }
 }
 
 #service {
@@ -369,33 +494,37 @@ main img {
 }
 #service ul li {
   display: flex;
-  display: flex;
   flex-direction: column-reverse;
   align-items: center;
   text-align: center;
   margin-top: 10em;
 }
-#service ul li.sp_hide {
-  display: none;
+#service ul li:first-child {
+  margin-top: 5em;
 }
-@media screen and (min-width: 600px) {
-  #service ul li.sp_hide {
-    display: flex;
+@media screen and (min-width: 1000px) {
+  #service ul li:nth-child(-n+2) {
+    margin-top: 6em;
   }
 }
 @media screen and (min-width: 1000px) {
   #service ul li {
+    margin-top: 12em;
     width: 42vw;
+    justify-content: space-between;
   }
 }
 #service ul li h3 {
-  max-width: 300px;
-  font-size: 2em;
+  font-size: 1.5em;
   background: #b37474;
   margin: 0 auto;
   padding: 0.2em 3em;
   border-radius: 1.5em;
   position: relative;
+  transition: 0.3s;
+}
+#service ul li h3:hover {
+  opacity: 0.7;
 }
 #service ul li h3 a {
   color: #fff;
@@ -417,7 +546,6 @@ main img {
   margin: auto;
 }
 #service ul li figure p {
-  font-size: 13px;
   line-height: 2em;
   padding: 1.5em;
   text-align: left;
@@ -457,15 +585,27 @@ main img {
     flex-wrap: nowrap;
   }
 }
-#news ul li {
+#news ul li article {
   padding: 1em 0;
   border-top: 1px #ccc solid;
 }
-#news ul li:last-child {
+@media screen and (min-width: 1000px) {
+  #news ul li article {
+    border-top: none;
+    margin: 1em;
+  }
+}
+#news ul li article:last-child {
   border-bottom: 1px #ccc solid;
+}
+@media screen and (min-width: 1000px) {
+  #news ul li article:last-child {
+    border-bottom: none;
+  }
 }
 #news ul li article img {
   display: flex;
+  display: none;
 }
 #news ul li article img.sp_hide {
   display: none;
@@ -475,26 +615,45 @@ main img {
     display: flex;
   }
 }
+@media screen and (min-width: 1000px) {
+  #news ul li article img {
+    display: block;
+    border: 1px #403333 solid;
+    border-radius: 15px;
+  }
+}
 #news ul li article time {
   color: #b37474;
   font-size: 1.2em;
+  display: block;
+}
+@media screen and (min-width: 1000px) {
+  #news ul li article time {
+    margin-top: 0.7em;
+  }
 }
 #news ul li article p {
-  font-size: 13px;
   font-weight: 500;
   margin-top: 0.3em;
 }
+@media screen and (min-width: 1000px) {
+  #news ul li article p {
+    margin-top: 0.5em;
+  }
+}
 #news .more {
   display: block;
-  font-size: 13px;
   padding: 1em 5em 1em 1em;
-  max-width: 200px;
   margin: 0 auto;
   margin-top: 4em;
-  background: #F2D291;
+  background-color: #F2D291;
   position: relative;
   color: #403333;
-  position: relative;
+  max-width: 15em;
+  transition: 0.3s;
+}
+#news .more:hover {
+  opacity: 0.7;
 }
 #news .more:before {
   content: "";
@@ -518,12 +677,40 @@ main img {
   width: 90vw;
   margin: 0 auto;
 }
+@media screen and (min-width: 1000px) {
+  #banner ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+}
 #banner ul li {
   position: relative;
   margin-bottom: 2em;
 }
-#banner ul li p {
-  font-size: 1.8em;
+@media screen and (min-width: 1000px) {
+  #banner ul li {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 43vw;
+  }
+}
+#banner ul li a {
+  width: 100%;
+}
+#banner ul li a img {
+  width: 100%;
+}
+#banner ul li a::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2117647059);
+}
+#banner ul li span {
+  font-size: 2.2vw;
   color: #fff;
   position: absolute;
   top: 60%;
@@ -531,19 +718,11 @@ main img {
   padding: 0.1em 0.4em;
   border-bottom: 1px #fff solid;
 }
-#banner ul li:nth-child(1) p {
+#banner ul li:nth-child(1) span {
   right: 7%;
 }
-#banner ul li:nth-child(2) p {
+#banner ul li:nth-child(2) span {
   left: 7%;
-}
-#banner ul li::before {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.2117647059);
 }
 #banner:before {
   position: absolute;
@@ -655,15 +834,17 @@ main img {
 }
 #instagram .more {
   display: block;
-  font-size: 13px;
   padding: 1em 5em 1em 1em;
-  max-width: 200px;
   margin: 0 auto;
   margin-top: 4em;
-  background: #F2D291;
+  background-color: #F2D291;
   position: relative;
   color: #403333;
-  position: relative;
+  max-width: 15em;
+  transition: 0.3s;
+}
+#instagram .more:hover {
+  opacity: 0.7;
 }
 #instagram .more:before {
   content: "";
@@ -692,7 +873,7 @@ main img {
   z-index: 400;
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: -5px;
   animation: bottom-wave 15s linear infinite;
 }
 
@@ -702,35 +883,39 @@ footer {
   padding-bottom: 3em;
   color: #fff;
 }
-footer > div {
+footer #footer-logo {
   margin: 0 auto;
   max-width: 200px;
   padding-bottom: 5em;
 }
 @media screen and (min-width: 1000px) {
-  footer > div {
+  footer #footer-logo {
+    max-width: none;
     display: flex;
     flex-wrap: nowrap;
+    align-items: center;
     justify-content: space-between;
+    width: 80vw;
+    margin: 0 auto;
   }
 }
-footer > div a {
+footer #footer-logo a {
   display: block;
 }
-@media screen and (min-width: 1000px) {
-  footer > div a {
-    width: 40vw;
-  }
-}
-footer > div a span {
-  display: block;
-  margin-top: 1em;
-}
-footer > div a:first-child {
+footer #footer-logo a:first-child {
   font-size: 8px;
   text-align: center;
 }
-footer > div a:last-child {
+@media screen and (min-width: 1000px) {
+  footer #footer-logo a:first-child {
+    font-size: 15px;
+  }
+}
+footer #footer-logo a:first-child span {
+  display: block;
+  margin-top: 1em;
+}
+footer #footer-logo a:last-child {
   font-size: 8px;
   margin: 5em auto 0;
   padding: 1.5em 0;
@@ -738,41 +923,143 @@ footer > div a:last-child {
   line-height: 2em;
   border-radius: 1em;
   background-color: #b37474;
+  height: 100%;
 }
 @media screen and (min-width: 1000px) {
-  footer > div a:last-child {
-    margin: 0 auto;
+  footer #footer-logo a:last-child {
+    margin: 0;
+    font-size: 15px;
+    height: 100%;
+    width: 400px;
   }
 }
-footer > div a:last-child strong {
+footer #footer-logo a:last-child strong {
   display: block;
   font-size: 2em;
 }
-footer aside #link {
+footer #footer-service {
+  display: flex;
+  display: none;
+  position: relative;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 0 3em 3em;
+}
+footer #footer-service.sp_hide {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  footer #footer-service.sp_hide {
+    display: flex;
+  }
+}
+@media screen and (min-width: 1000px) {
+  footer #footer-service {
+    display: block;
+  }
+}
+footer #footer-service ul {
+  margin: 3em 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+footer #footer-service ul li {
+  width: 10vw;
+}
+footer #footer-service ul li a span {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+footer #footer-service ul li a span:first-child {
+  font-size: 4em;
+  position: relative;
+  background-color: #fff;
+  color: #734E4A;
+  height: 1.8em;
+  width: 1.8em;
+  line-height: 1.8em;
+  border-radius: 0.9em;
+}
+footer #footer-service ul li a span:last-child {
+  margin-top: 1em;
+}
+footer #footer-service > a {
+  position: absolute;
+  right: 0;
+  padding-right: 3em;
+}
+footer #footer-service > a i {
+  font-size: 0.7em;
+  margin-right: 0.5em;
+  border: 1px #fff solid;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  border-radius: 0.75em;
+  text-align: center;
+}
+footer aside #footer-link {
   width: 90vw;
   margin: 0 auto;
   border-top: 1px #ccc solid;
   border-bottom: 1px #ccc solid;
-  font-size: 1.2em;
-  font-weight: 500;
+  font-weight: 700;
   display: flex;
-  padding: 3em;
+  padding: 2em 1em;
+  justify-content: space-between;
 }
-footer aside #link > div {
+@media screen and (min-width: 1000px) {
+  footer aside #footer-link {
+    padding: 2em 3em;
+  }
+}
+footer aside #footer-link > div {
   width: 50%;
 }
-footer aside #link > div li {
+@media screen and (min-width: 1000px) {
+  footer aside #footer-link > div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+footer aside #footer-link > div > ul > li {
   padding: 1em 0;
 }
-footer aside #link .sp_hide {
-  display: flex;
+footer aside #footer-link > div > ul > li:has(i) {
+  padding-top: 0;
 }
-footer aside #link .sp_hide.sp_hide {
+footer aside #footer-link > div > ul > li:has(i) ul li {
+  padding: 1em 0;
+}
+@media screen and (min-width: 1000px) {
+  footer aside #footer-link > div:first-child {
+    width: 75%;
+  }
+}
+@media screen and (min-width: 1000px) {
+  footer aside #footer-link > div:first-child > ul {
+    width: 33.333%;
+  }
+}
+footer aside #footer-link > div:first-child > ul .sp_hide {
   display: none;
 }
-@media screen and (min-width: 600px) {
-  footer aside #link .sp_hide.sp_hide {
-    display: flex;
+@media screen and (min-width: 1000px) {
+  footer aside #footer-link > div:first-child > ul .sp_hide {
+    display: block;
+  }
+}
+footer aside #footer-link > div:first-child > ul .sp_hide li:has(> i) {
+  font-weight: 400;
+}
+footer aside #footer-link > div:first-child > ul .sp_hide i {
+  margin-right: 0.5em;
+}
+@media screen and (min-width: 1000px) {
+  footer aside #footer-link > div:last-child {
+    width: 25%;
   }
 }
 footer aside #social {
@@ -793,13 +1080,13 @@ footer aside #copr {
   margin: 0 auto;
 }
 footer aside #copr p {
-  font-size: 8px;
+  font-size: 13px;
   text-align: center;
   margin-top: 3em;
   line-height: 2em;
 }
 footer aside #copr h6 {
-  font-size: 7px;
+  font-size: 10px;
   margin-top: 2em;
   text-align: center;
 }

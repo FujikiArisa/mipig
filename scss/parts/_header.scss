@@ -18,27 +18,58 @@ header {
 
         @include mixins.mq(pc) {
             display: flex;
-            flex-direction: row;
-            // TODO:縦並びにならない
+            flex-direction: column;
 
-            ul {
+            >ul {
 
                 &:first-child {
-                    background-color: variables.$sub-color;
                     display: flex;
                     height: fit-content;
+                    justify-content: flex-end;
                     color: #fff;
-                    padding: 1em 1em;
-                    border-radius: 5px;
+
+                    li {
+                        background-color: variables.$sub-color;
+                        width: 13em;
+                        padding: 0.5em 2em;
+                        border-radius: 5px;
+                        margin-left: 2.5em;
+                        text-align: center;
+                        @include mixins.hover-tra();
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                    }
                 }
 
                 &:last-child {
                     display: flex;
-                }
+                    margin-top: 1em;
 
-                .sub-menu{
-                    display: none;
-                    // TODO:メニューをホバーで出す
+                    >li {
+                        margin-left: 2.5em;
+
+                        &:hover .sub-menu {
+                            display: block;
+                        }
+
+                        &:first-child {
+                            margin-left: 0;
+                        }
+
+                        .sub-menu {
+                            display: none;
+                            position: absolute;
+                            z-index: 1000;
+                            background-color: variables.$main-color;
+                            transition: 1s;
+
+                            li {
+                                padding: 1em 1em;
+                            }
+                        }
+                    }
                 }
             }
         }
