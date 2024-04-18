@@ -4,7 +4,6 @@ main {
     overflow-x: hidden;
     @include mixins.wave(url(/images/wave_01@3x.png));
     
-
     &::before {
         @include mixins.main_position(200);
         @include mixins.filter-black();
@@ -22,5 +21,9 @@ main {
         right: 0;
         margin: auto;
         @include mixins.main_position(300);
+
+        @include mixins.mq(pc){
+            width: 50%;
+        }
     }
 }

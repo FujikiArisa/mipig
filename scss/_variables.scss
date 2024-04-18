@@ -12,14 +12,14 @@ $pc-font-size: 17px;
 $padding-title: 10em 3em 0;
 $base-split: 10vw;
 $box-width: (
-    "tablet": 10vw,
+    "sp": 10vw,
     "pc": 100%,
 ) !default;
 // 余白
 
 $breakpoints: (
     // "mobile": "screen and (min-width: 431px)",
-    "tablet": "screen and (min-width: 600px)",
+    "sp": "screen and (min-width: 600px)",
     "pc": "screen and (min-width: 1000px)",
 ) !default;
 
@@ -28,34 +28,19 @@ $breakpoints: (
 
 
 
+
+
 // TODO
 
-
-// 画像の書き出し_ロゴ・スライド・足跡
-
 // ヘッダー
-// フェードでサブメニューを表示させる
+// ロゴとナビゲーションの上下を揃える
+// ハンバーガーメニュー
 
-// about
-// moreボタンのホバーアクションを他のでも試す
-// 破線を追加
+// メイン
+// スマホ版の時の動画が真ん中になっていない
 
 // family
-// ホバーアクション
-
-// service
-// ホバーアクション
-// 足跡の画像を追加
-
-// news
-// ホバーアクション
-
-// contace
-// リンクタグに画像が含まれていない
-
-// instagram
-// moreボタンが機能してない
+// 横が揃わないときがある
 
 // footer
-// ホバーアクション
-// cssを整理する
+// 一番上のボタンの上下を揃える

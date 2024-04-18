@@ -16,9 +16,7 @@ footer {
             align-items: center;
             justify-content: space-between;
             @include mixins.box-width(8);
-
         }
-
 
         a {
             display: block;
@@ -43,14 +41,12 @@ footer {
                 padding: 1.5em 0;
                 text-align: center;
                 line-height: 2em;
-                border-radius: 1em;
+                border-radius: 10px;
                 background-color: variables.$sub-color;
-                height: 100%;
 
                 @include mixins.mq(pc) {
                     margin: 0;
                     font-size: 15px;
-                    height: 100%;
                     width: 400px;
                 }
 
@@ -64,45 +60,51 @@ footer {
     }
 
     #footer-service {
-        @include mixins.sp-hide();
         display: none;
-        position: relative;
 
         @include mixins.mq(pc) {
             display: block;
-        }
 
-        @include mixins.box-width();
-        padding: 0 3em 3em;
+            @include mixins.box-width();
+            padding: 0 3em 3em;
 
-        ul {
-            margin: 3em 0;
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
+            >span{
+                    font-weight: 600;
+                }
 
-            li {
-                width: 10vw;
+            ul {
+                margin: 3em 0;
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
 
-                a {
-                    span {
-                        display: block;
-                        text-align: center;
-                        margin: 0 auto;
+                li {
+                    width: 10vw;
 
-                        &:first-child {
-                            font-size: 4em;
-                            position: relative;
-                            background-color: #fff;
-                            color: #734E4A;
-                            height: 1.8em;
-                            width: 1.8em;
-                            line-height: 1.8em;
-                            border-radius: 0.9em;
-                        }
+                    a {
+                        span {
+                            display: block;
+                            text-align: center;
+                            margin: 0 auto;
 
-                        &:last-child {
-                            margin-top: 1em;
+                            &:first-child {
+                                font-size: 3em;
+                                position: relative;
+                                background-color: #fff;
+                                color: #734E4A;
+                                height: 90px;
+                                width: 90px;
+                                line-height: 90px;
+                                border-radius: 45px;
+                            }
+
+                            &:last-child {
+                                margin-top: 1em;
+
+                                i{
+                                    margin-right: .5em;
+                                }
+                            }
                         }
                     }
                 }
@@ -137,7 +139,6 @@ footer {
             padding: 2em 1em;
             justify-content: space-between;
 
-
             @include mixins.mq(pc) {
                 padding: 2em 3em;
             }
@@ -150,17 +151,8 @@ footer {
                     justify-content: space-between;
                 }
 
-                >ul>li {
-                    padding: 1em 0;
-
-
-                    &:has(i) {
-                        padding-top: 0;
-
-                        ul li {
-                            padding: 1em 0;
-                        }
-                    }
+                ul li {
+                    margin: 1.5em 0;
                 }
 
                 &:first-child {
@@ -173,23 +165,23 @@ footer {
                             width: 33.333%;
                         }
 
-
                         .sp_hide {
                             display: none;
 
                             @include mixins.mq(pc) {
                                 display: block;
-                            }
 
-                            li:has(> i) {
-                                font-weight: 400;
-                            }
+                                li:has(> i) {
+                                    font-weight: 400;
+                                }
 
-                            i {
-                                margin-right: .5em;
+                                i {
+                                    margin-right: .5em;
+                                }
                             }
                         }
                     }
+
                 }
 
                 &:last-child {
@@ -203,7 +195,7 @@ footer {
         #social {
             @include mixins.box-width(8);
             margin-top: .7em;
-            font-size: 2em;
+            font-size: 1.5em;
 
             ul {
                 display: flex;
@@ -213,22 +205,33 @@ footer {
                     margin-left: .7em;
                 }
             }
+            @include mixins.mq(pc) {
+                font-size: 2em;
+            }
         }
 
         #copr {
             @include mixins.box-width(8);
 
             p {
-                font-size: 13px;
+                font-size: 8px;
                 text-align: center;
                 margin-top: 3em;
                 line-height: 2em;
+
+                @include mixins.mq(pc) {
+                    font-size: 13px;
+                }
             }
 
             h6 {
-                font-size: 10px;
+                font-size: 6px;
                 margin-top: 2em;
                 text-align: center;
+
+                @include mixins.mq(pc) {
+                    font-size: 10px;
+                }
             }
         }
     }

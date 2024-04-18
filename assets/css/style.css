@@ -21,7 +21,7 @@ img {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-1775px);
+    transform: translateX(-1770px);
   }
 }
 @keyframes bottom-wave {
@@ -32,104 +32,137 @@ img {
     transform: translateX(-990px);
   }
 }
+.more {
+  display: block;
+  padding: 1em 5em 1em 1em;
+  margin: 0 auto;
+  margin-top: 5em;
+  background-color: #F2D291;
+  position: relative;
+  color: #403333;
+  max-width: 15em;
+}
+.more:before {
+  content: "";
+  display: block;
+  border: 1px #403333 solid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -3px;
+  left: -3px;
+}
+.more i {
+  position: absolute;
+  right: 1.5em;
+}
+
 header {
+  width: 90vw;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  height: 8.5em;
-  padding: 1.7em;
-}
-header h1 {
-  width: 20vw;
-  height: 100%;
+  padding: 1em 0;
+  height: 10em;
 }
 header h1 img {
-  height: 100%;
+  height: 8em;
 }
-header nav {
+header #navigation {
+  z-index: 10000;
+  color: #fff;
+  background-color: #734E4A;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5em 5em 10em 3em;
+}
+@media screen and (min-width: 1000px) {
+  header #navigation {
+    background-color: transparent;
+    display: block;
+    padding: 0;
+    position: static;
+  }
+}
+header #navigation > ul > li {
+  margin: 2em 0;
+}
+@media screen and (min-width: 1000px) {
+  header #navigation > ul > li {
+    margin: 0;
+  }
+}
+header #navigation > ul > li a span {
+  font-weight: 600;
+}
+@media screen and (min-width: 1000px) {
+  header #navigation > ul > li a span {
+    font-weight: normal;
+  }
+}
+header #navigation > ul > li a i {
+  display: none;
+}
+header #navigation > ul > li > ul > li {
+  margin: 2em 0;
+}
+@media screen and (min-width: 1000px) {
+  header #navigation > ul > li > ul > li {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  header #navigation > ul:first-child {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+header #navigation > ul:first-child li {
+  background-color: #b37474;
+  padding: 1em;
+  border-radius: 10px;
+  text-align: center;
+  width: 13em;
+}
+@media screen and (min-width: 1000px) {
+  header #navigation > ul:first-child li {
+    color: #fff;
+    margin-left: 2em;
+  }
+  header #navigation > ul:first-child li:first-child {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1000px) {
+  header #navigation > ul:last-child {
+    display: flex;
+    margin-top: 2em;
+  }
+}
+header #navigation > ul:last-child li a i {
   display: none;
 }
 @media screen and (min-width: 1000px) {
-  header nav {
-    display: flex;
-    flex-direction: column;
+  header #navigation > ul:last-child li a i {
+    display: inline;
   }
-  header nav > ul:first-child {
-    display: flex;
-    height: fit-content;
-    justify-content: flex-end;
-    color: #fff;
-  }
-  header nav > ul:first-child li {
-    background-color: #b37474;
-    width: 13em;
-    padding: 0.5em 2em;
-    border-radius: 5px;
-    margin-left: 2.5em;
-    text-align: center;
-    transition: 0.3s;
-  }
-  header nav > ul:first-child li:hover {
-    opacity: 0.7;
-  }
-  header nav > ul:first-child li:first-child {
-    margin-left: 0;
-  }
-  header nav > ul:last-child {
-    display: flex;
-    margin-top: 1em;
-  }
-  header nav > ul:last-child > li {
-    margin-left: 2.5em;
-  }
-  header nav > ul:last-child > li:hover .sub-menu {
-    display: block;
-  }
-  header nav > ul:last-child > li:first-child {
-    margin-left: 0;
-  }
-  header nav > ul:last-child > li .sub-menu {
-    display: none;
-    position: absolute;
-    z-index: 1000;
-    background-color: #FFF2F2;
-    transition: 1s;
-  }
-  header nav > ul:last-child > li .sub-menu li {
-    padding: 1em 1em;
-  }
-}
-
-#hamburger {
-  display: block;
-  position: fixed;
-  z-index: 300;
-  background-color: black;
-  top: 0;
-  right: 0;
 }
 @media screen and (min-width: 1000px) {
-  #hamburger {
-    display: none;
+  header #navigation > ul:last-child li {
+    color: #403333;
+    margin-left: 2em;
+  }
+  header #navigation > ul:last-child li:first-child {
+    margin: 0;
   }
 }
-#hamburger span {
-  display: block;
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  left: 6px;
-  background: black;
-}
-#hamburger span:nth-child(1) {
-  top: 10px;
-}
-#hamburger span:nth-child(2) {
-  top: 20px;
-}
-#hamburger span:nth-child(3) {
-  top: 30px;
+@media screen and (min-width: 1000px) {
+  header #navigation > ul:last-child li .sub-menu {
+    display: none;
+  }
 }
 
 main {
@@ -150,7 +183,7 @@ main::after {
   z-index: 400;
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: 0;
   animation: bottom-wave 15s linear infinite;
 }
 main::before {
@@ -183,28 +216,17 @@ main img {
   left: 0;
   z-index: 300;
 }
+@media screen and (min-width: 1000px) {
+  main img {
+    width: 50%;
+  }
+}
 
 #about {
   background-color: #FFF2F2;
 }
 #about section {
   padding-top: 5em;
-}
-#about section:first-child img:first-child {
-  padding-right: 3%;
-}
-#about section:last-child {
-  padding-bottom: 10em;
-  padding-top: 10em;
-}
-@media screen and (min-width: 1000px) {
-  #about section:last-child article {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-}
-#about section:last-child article img {
-  padding-left: 3%;
 }
 #about section h2 {
   position: relative;
@@ -224,59 +246,74 @@ main img {
   top: 0;
   bottom: 0;
   margin: auto 0;
-  z-index: 0;
+  z-index: 10;
 }
 #about section h2 img {
   position: relative;
   background-color: #FFF2F2;
   padding: 0 0.5em;
-  z-index: 1;
+  z-index: 20;
 }
 @media screen and (min-width: 1000px) {
   #about section h2 {
     position: relative;
     width: 40%;
     margin: 0 auto;
-    padding-top: 10em;
+    padding-top: 0;
   }
   #about section h2::after {
     content: "";
     position: absolute;
     display: block;
-    width: 0;
+    width: 240%;
     height: 2px;
     background-image: linear-gradient(to right, #b37474 4px, transparent 2px);
     background-size: 10px 2px;
-    left: 0;
+    left: -70%;
     top: 0;
     bottom: 0;
     margin: auto 0;
-    z-index: 0;
+    z-index: 10;
   }
   #about section h2 img {
     position: relative;
     background-color: #FFF2F2;
     padding: 0 0.5em;
-    z-index: 1;
+    z-index: 20;
   }
+}
+#about section:first-child img {
+  padding-right: 3%;
+}
+#about section:last-child {
+  padding-bottom: 10em;
+  padding-top: 10em;
+}
+@media screen and (min-width: 1000px) {
+  #about section:last-child article {
+    flex-direction: row-reverse;
+  }
+}
+#about section:last-child article img {
+  padding-left: 3%;
 }
 @media screen and (min-width: 1000px) {
   #about section article {
-    padding-top: 7em;
-    display: flex;
     width: 90vw;
     margin: 0 auto;
+    display: flex;
     justify-content: space-between;
+    padding-top: 7em;
   }
 }
 #about section article img {
   display: block;
-  margin: 5em auto;
-  width: 65vw;
+  margin: 3em auto;
+  width: 70vw;
 }
 @media screen and (min-width: 1000px) {
   #about section article img {
-    width: 41vw;
+    width: 40vw;
     margin: 0;
   }
 }
@@ -294,21 +331,14 @@ main img {
 #about section article div span {
   display: none;
 }
-#about section article div span.sp_hide {
-  display: none;
-}
-@media screen and (min-width: 600px) {
-  #about section article div span.sp_hide {
-    display: none;
-  }
-}
 @media screen and (min-width: 1000px) {
   #about section article div span {
     display: block;
-    font-size: 1.3em;
+    font-size: 1.9vw;
+    color: #674d32;
     font-weight: 500;
-    color: #F2D291;
-    line-height: 1.5em;
+    line-height: 1.7em;
+    letter-spacing: 0.2em;
   }
 }
 #about section article div p {
@@ -316,7 +346,8 @@ main img {
 }
 @media screen and (min-width: 1000px) {
   #about section article div p {
-    padding-top: 2em;
+    margin-top: 0.8em;
+    font-size: 1.4vw;
   }
 }
 #about section article div strong {
@@ -328,32 +359,10 @@ main img {
   font-weight: normal;
 }
 #about section article div .more {
-  display: block;
-  padding: 1em 5em 1em 1em;
-  margin: 0 auto;
-  margin-top: 4em;
-  background-color: #F2D291;
-  position: relative;
-  color: #403333;
-  max-width: 15em;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 #about section article div .more:hover {
-  opacity: 0.7;
-}
-#about section article div .more:before {
-  content: "";
-  display: block;
-  border: 1px #403333 solid;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: -3px;
-  left: -3px;
-}
-#about section article div .more i {
-  position: absolute;
-  right: 1.5em;
+  opacity: 0.6;
 }
 @media screen and (min-width: 1000px) {
   #about section article div .more {
@@ -369,17 +378,6 @@ main img {
   overflow-x: hidden;
   width: 100vw;
 }
-#slide span {
-  display: none;
-}
-#slide span.sp_hide {
-  display: none;
-}
-@media screen and (min-width: 600px) {
-  #slide span.sp_hide {
-    display: none;
-  }
-}
 @media screen and (min-width: 1000px) {
   #slide span {
     background-image: url(/images/slide/image@3x.jpg);
@@ -387,15 +385,20 @@ main img {
     background-size: contain;
     background-position: left bottom;
     height: 190px;
-    width: 5326px;
+    width: 5310px;
     display: block;
-    animation: slide 20s linear infinite;
+    animation: slide 30s linear infinite;
   }
 }
 
 #family {
   background-image: url(/images/family/bg@3x.png);
   background-size: 70%;
+}
+@media screen and (min-width: 1000px) {
+  #family {
+    background-size: 40%;
+  }
 }
 #family h2 {
   position: relative;
@@ -427,10 +430,10 @@ main img {
 }
 #family ul li {
   width: 45%;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 #family ul li:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 @media screen and (min-width: 1000px) {
   #family ul li {
@@ -453,18 +456,20 @@ main img {
 }
 #family ul li a h3 {
   color: #b37474;
-  font-size: 1.3em;
+  font-size: 1.1em;
   margin-top: 1.5em;
   font-weight: 500;
 }
 @media screen and (min-width: 1000px) {
   #family ul li a h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
 }
 
 #service {
   background: #FFF2F2;
+  position: relative;
+  z-index: 10;
 }
 #service h2 {
   position: relative;
@@ -480,10 +485,25 @@ main img {
     padding-top: 10em;
   }
 }
+#service .picture img {
+  position: absolute;
+  display: block;
+  z-index: 100;
+}
+#service .picture img:first-child {
+  width: 30vw;
+  top: 2em;
+  left: 2em;
+}
+#service .picture img:last-child {
+  width: 50vw;
+  bottom: 2em;
+  right: 2em;
+}
 #service ul {
   width: 90vw;
   margin: 0 auto;
-  padding: 0 0 10em;
+  padding-bottom: 10em;
 }
 @media screen and (min-width: 1000px) {
   #service ul {
@@ -499,6 +519,13 @@ main img {
   text-align: center;
   margin-top: 10em;
 }
+@media screen and (min-width: 1000px) {
+  #service ul li {
+    margin-top: 12em;
+    width: 42vw;
+    justify-content: space-between;
+  }
+}
 #service ul li:first-child {
   margin-top: 5em;
 }
@@ -507,39 +534,32 @@ main img {
     margin-top: 6em;
   }
 }
-@media screen and (min-width: 1000px) {
-  #service ul li {
-    margin-top: 12em;
-    width: 42vw;
-    justify-content: space-between;
-  }
-}
 #service ul li h3 {
-  font-size: 1.5em;
-  background: #b37474;
-  margin: 0 auto;
-  padding: 0.2em 3em;
-  border-radius: 1.5em;
   position: relative;
-  transition: 0.3s;
+  background: #b37474;
+  padding: 0.2em 3em;
+  margin: 0 auto;
+  border-radius: 2.25em;
+  transition: 0.2s;
 }
 #service ul li h3:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 #service ul li h3 a {
   color: #fff;
   line-height: 2em;
   font-weight: 700;
+  font-size: 1.5em;
 }
 #service ul li h3 i {
   background: rgba(255, 255, 255, 0.231372549);
+  color: #b37474;
+  text-align: center;
+  position: absolute;
   width: 1.5em;
   height: 1.5em;
-  text-align: center;
   line-height: 1.5em;
   border-radius: 1.5em;
-  color: #b37474;
-  position: absolute;
   top: 0;
   bottom: 0;
   right: 0.5em;
@@ -559,6 +579,12 @@ main img {
 
 #news {
   padding-bottom: 10em;
+}
+#news .picture img {
+  position: absolute;
+  display: block;
+  z-index: -100;
+  width: 50vw;
 }
 #news h2 {
   position: relative;
@@ -582,7 +608,8 @@ main img {
 @media screen and (min-width: 1000px) {
   #news ul {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
 #news ul li article {
@@ -592,7 +619,7 @@ main img {
 @media screen and (min-width: 1000px) {
   #news ul li article {
     border-top: none;
-    margin: 1em;
+    width: 28vw;
   }
 }
 #news ul li article:last-child {
@@ -604,21 +631,12 @@ main img {
   }
 }
 #news ul li article img {
-  display: flex;
   display: none;
-}
-#news ul li article img.sp_hide {
-  display: none;
-}
-@media screen and (min-width: 600px) {
-  #news ul li article img.sp_hide {
-    display: flex;
-  }
 }
 @media screen and (min-width: 1000px) {
   #news ul li article img {
     display: block;
-    border: 1px #403333 solid;
+    border: 1px #b37474 solid;
     border-radius: 15px;
   }
 }
@@ -640,34 +658,6 @@ main img {
   #news ul li article p {
     margin-top: 0.5em;
   }
-}
-#news .more {
-  display: block;
-  padding: 1em 5em 1em 1em;
-  margin: 0 auto;
-  margin-top: 4em;
-  background-color: #F2D291;
-  position: relative;
-  color: #403333;
-  max-width: 15em;
-  transition: 0.3s;
-}
-#news .more:hover {
-  opacity: 0.7;
-}
-#news .more:before {
-  content: "";
-  display: block;
-  border: 1px #403333 solid;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: -3px;
-  left: -3px;
-}
-#news .more i {
-  position: absolute;
-  right: 1.5em;
 }
 
 #banner {
@@ -710,13 +700,18 @@ main img {
   background: rgba(0, 0, 0, 0.2117647059);
 }
 #banner ul li span {
-  font-size: 2.2vw;
+  font-size: 4.5vw;
   color: #fff;
   position: absolute;
   top: 60%;
   width: fit-content;
   padding: 0.1em 0.4em;
   border-bottom: 1px #fff solid;
+}
+@media screen and (min-width: 1000px) {
+  #banner ul li span {
+    font-size: 2.25vw;
+  }
 }
 #banner ul li:nth-child(1) span {
   right: 7%;
@@ -738,17 +733,13 @@ main img {
   background-color: #FFF2F2;
   position: relative;
   padding: 10em 0 15em;
-  z-index: -1000;
   overflow-x: hidden;
-}
-#instagram:last-child {
-  padding-bottom: 10em;
 }
 #instagram h2 {
   position: relative;
   width: 50%;
   margin: 0 auto;
-  padding-top: 0;
+  padding-top: 0%;
 }
 #instagram h2::after {
   content: "";
@@ -762,18 +753,18 @@ main img {
   top: 0;
   bottom: 0;
   margin: auto 0;
-  z-index: 0;
+  z-index: 10;
 }
 #instagram h2 img {
   position: relative;
   background-color: #FFF2F2;
   padding: 0 0.5em;
-  z-index: 1;
+  z-index: 20;
 }
 @media screen and (min-width: 1000px) {
   #instagram h2 {
     position: relative;
-    width: 30%;
+    width: 25%;
     margin: 0 auto;
     padding-top: 0;
   }
@@ -781,21 +772,21 @@ main img {
     content: "";
     position: absolute;
     display: block;
-    width: 0;
+    width: 380%;
     height: 2px;
     background-image: linear-gradient(to right, #b37474 4px, transparent 2px);
     background-size: 10px 2px;
-    left: 0;
+    left: -140%;
     top: 0;
     bottom: 0;
     margin: auto 0;
-    z-index: 0;
+    z-index: 10;
   }
   #instagram h2 img {
     position: relative;
     background-color: #FFF2F2;
     padding: 0 0.5em;
-    z-index: 1;
+    z-index: 20;
   }
 }
 #instagram .picture {
@@ -804,7 +795,7 @@ main img {
 #instagram .picture img {
   position: absolute;
   display: block;
-  z-index: -100;
+  z-index: 100;
 }
 #instagram .picture img:first-child {
   right: 3em;
@@ -822,6 +813,8 @@ main img {
   justify-content: space-between;
   align-items: center;
   padding-top: 5em;
+  position: relative;
+  z-index: 150;
 }
 @media screen and (min-width: 1000px) {
   #instagram ul {
@@ -831,34 +824,6 @@ main img {
 #instagram ul li {
   width: 33%;
   padding: 0.5em;
-}
-#instagram .more {
-  display: block;
-  padding: 1em 5em 1em 1em;
-  margin: 0 auto;
-  margin-top: 4em;
-  background-color: #F2D291;
-  position: relative;
-  color: #403333;
-  max-width: 15em;
-  transition: 0.3s;
-}
-#instagram .more:hover {
-  opacity: 0.7;
-}
-#instagram .more:before {
-  content: "";
-  display: block;
-  border: 1px #403333 solid;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: -3px;
-  left: -3px;
-}
-#instagram .more i {
-  position: absolute;
-  right: 1.5em;
 }
 #instagram::after {
   background-image: url(/images/wave_02@3x.png);
@@ -873,7 +838,7 @@ main img {
   z-index: 400;
   position: absolute;
   left: 0;
-  bottom: -5px;
+  bottom: 0;
   animation: bottom-wave 15s linear infinite;
 }
 
@@ -921,15 +886,13 @@ footer #footer-logo a:last-child {
   padding: 1.5em 0;
   text-align: center;
   line-height: 2em;
-  border-radius: 1em;
+  border-radius: 10px;
   background-color: #b37474;
-  height: 100%;
 }
 @media screen and (min-width: 1000px) {
   footer #footer-logo a:last-child {
     margin: 0;
     font-size: 15px;
-    height: 100%;
     width: 400px;
   }
 }
@@ -938,52 +901,48 @@ footer #footer-logo a:last-child strong {
   font-size: 2em;
 }
 footer #footer-service {
-  display: flex;
   display: none;
-  position: relative;
-  width: 90vw;
-  margin: 0 auto;
-  padding: 0 3em 3em;
-}
-footer #footer-service.sp_hide {
-  display: none;
-}
-@media screen and (min-width: 600px) {
-  footer #footer-service.sp_hide {
-    display: flex;
-  }
 }
 @media screen and (min-width: 1000px) {
   footer #footer-service {
     display: block;
+    width: 90vw;
+    margin: 0 auto;
+    padding: 0 3em 3em;
   }
-}
-footer #footer-service ul {
-  margin: 3em 0;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-footer #footer-service ul li {
-  width: 10vw;
-}
-footer #footer-service ul li a span {
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-}
-footer #footer-service ul li a span:first-child {
-  font-size: 4em;
-  position: relative;
-  background-color: #fff;
-  color: #734E4A;
-  height: 1.8em;
-  width: 1.8em;
-  line-height: 1.8em;
-  border-radius: 0.9em;
-}
-footer #footer-service ul li a span:last-child {
-  margin-top: 1em;
+  footer #footer-service > span {
+    font-weight: 600;
+  }
+  footer #footer-service ul {
+    margin: 3em 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  footer #footer-service ul li {
+    width: 10vw;
+  }
+  footer #footer-service ul li a span {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+  footer #footer-service ul li a span:first-child {
+    font-size: 3em;
+    position: relative;
+    background-color: #fff;
+    color: #734E4A;
+    height: 90px;
+    width: 90px;
+    line-height: 90px;
+    border-radius: 45px;
+  }
+  footer #footer-service ul li a span:last-child {
+    margin-top: 1em;
+  }
+  footer #footer-service ul li a span:last-child i {
+    margin-right: 0.5em;
+  }
 }
 footer #footer-service > a {
   position: absolute;
@@ -1024,14 +983,8 @@ footer aside #footer-link > div {
     justify-content: space-between;
   }
 }
-footer aside #footer-link > div > ul > li {
-  padding: 1em 0;
-}
-footer aside #footer-link > div > ul > li:has(i) {
-  padding-top: 0;
-}
-footer aside #footer-link > div > ul > li:has(i) ul li {
-  padding: 1em 0;
+footer aside #footer-link > div ul li {
+  margin: 1.5em 0;
 }
 @media screen and (min-width: 1000px) {
   footer aside #footer-link > div:first-child {
@@ -1050,12 +1003,12 @@ footer aside #footer-link > div:first-child > ul .sp_hide {
   footer aside #footer-link > div:first-child > ul .sp_hide {
     display: block;
   }
-}
-footer aside #footer-link > div:first-child > ul .sp_hide li:has(> i) {
-  font-weight: 400;
-}
-footer aside #footer-link > div:first-child > ul .sp_hide i {
-  margin-right: 0.5em;
+  footer aside #footer-link > div:first-child > ul .sp_hide li:has(> i) {
+    font-weight: 400;
+  }
+  footer aside #footer-link > div:first-child > ul .sp_hide i {
+    margin-right: 0.5em;
+  }
 }
 @media screen and (min-width: 1000px) {
   footer aside #footer-link > div:last-child {
@@ -1066,7 +1019,7 @@ footer aside #social {
   width: 80vw;
   margin: 0 auto;
   margin-top: 0.7em;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 footer aside #social ul {
   display: flex;
@@ -1075,18 +1028,33 @@ footer aside #social ul {
 footer aside #social ul li:last-child {
   margin-left: 0.7em;
 }
+@media screen and (min-width: 1000px) {
+  footer aside #social {
+    font-size: 2em;
+  }
+}
 footer aside #copr {
   width: 80vw;
   margin: 0 auto;
 }
 footer aside #copr p {
-  font-size: 13px;
+  font-size: 8px;
   text-align: center;
   margin-top: 3em;
   line-height: 2em;
 }
+@media screen and (min-width: 1000px) {
+  footer aside #copr p {
+    font-size: 13px;
+  }
+}
 footer aside #copr h6 {
-  font-size: 10px;
+  font-size: 6px;
   margin-top: 2em;
   text-align: center;
+}
+@media screen and (min-width: 1000px) {
+  footer aside #copr h6 {
+    font-size: 10px;
+  }
 }

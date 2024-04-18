@@ -2,20 +2,16 @@
     background-color: variables.$main-color;
     position: relative;
     padding: 10em 0 15em;
-    z-index: -1000;
     overflow-x: hidden;
 
-    &:last-child {
-        padding-bottom: 10em;
-    }
 
     h2 {
-        @include mixins.title-sp(50%, 0);
-        @include mixins.title-border(190%, -45%);
+        @include mixins.title(50%, 0%);
+        @include mixins.border(190%, -45%);
 
         @include mixins.mq(pc) {
-            @include mixins.title-pc(30%, 0);
-            @include mixins.title-border(0, 0);
+            @include mixins.title(25%, 0);
+            @include mixins.border(380%, -140%);
         }
     }
 
@@ -25,7 +21,7 @@
         img {
             position: absolute;
             display: block;
-            z-index: -100;
+            z-index: 100;
 
             &:first-child {
                 right: 3em;
@@ -44,6 +40,8 @@
         @include mixins.box-width(8);
         @include mixins.flex();
         padding-top: 5em;
+        position: relative;
+        z-index: 150;
 
         @include mixins.mq(pc) {
             flex-wrap: nowrap;
@@ -55,9 +53,6 @@
         }
     }
 
-    .more {
-        @include mixins.more()
-    }
 
     @include mixins.wave(url(/images/wave_02@3x.png));
 }

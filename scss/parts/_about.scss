@@ -4,59 +4,53 @@
     section {
         padding-top: 5em;
 
-        &:first-child img{
-            &:first-child{
-                padding-right: 3%;
+        h2 {
+            @include mixins.title(80%, 0);
+            @include mixins.border(120%, -10%);
+
+            @include mixins.mq(pc) {
+                @include mixins.title(40%, 0);
+                @include mixins.border(240%, -70%);
             }
+        }
+
+        &:first-child img {
+            padding-right: 3%;
         }
 
         &:last-child {
             padding-bottom: 10em;
             padding-top: 10em;
 
-
             article {
                 @include mixins.mq(pc) {
                     flex-direction: row-reverse;
-                    justify-content: space-between;
                 }
 
-                img{
+                img {
                     padding-left: 3%;
                 }
             }
         }
 
-        h2 {
-            @include mixins.title-sp(80%, 0);
-            @include mixins.title-border();
-
-            @include mixins.mq(pc) {
-                @include mixins.title-border(0, 0);
-                @include mixins.title-pc();
-            }
-        }
 
         article {
             @include mixins.mq(pc) {
-                padding-top: 7em;
-                display: flex;
                 @include mixins.box-width(9);
+                display: flex;
                 justify-content: space-between;
+                padding-top: 7em;
             }
 
             img {
                 display: block;
-                margin: 5em auto;
-                width: 65vw;
-
-                
+                margin: 3em auto;
+                width: 70vw;
 
                 @include mixins.mq(pc) {
-                    width: 41vw;
+                    width: 40vw;
                     margin: 0;
                 }
-
             }
 
             div {
@@ -69,14 +63,15 @@
                 }
 
                 span {
-                    @include mixins.sp-hide(none);
+                    display: none;
 
                     @include mixins.mq(pc) {
                         display: block;
-                        font-size: 1.3em;
+                        font-size: 1.9vw;
+                        color: #674d32;
                         font-weight: 500;
-                        color: variables.$accent-color;
-                        line-height: 1.5em;
+                        line-height: 1.7em;
+                        letter-spacing: .2em;
                     }
                 }
 
@@ -84,7 +79,8 @@
                     line-height: 2em;
 
                     @include mixins.mq(pc) {
-                        padding-top: 2em;
+                        margin-top: .8em;
+                        font-size: 1.4vw;
                     }
                 }
 
@@ -95,12 +91,10 @@
                     text-underline-offset: -2px;
                     text-decoration-skip-ink: none;
                     font-weight: normal;
-
-
                 }
 
                 .more {
-                    @include mixins.more();
+                    @include mixins.hover-tra();
 
                     @include mixins.mq(pc) {
                         position: absolute;
@@ -110,7 +104,6 @@
                         margin: auto;
                     }
                 }
-
             }
         }
     }

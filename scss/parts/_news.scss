@@ -1,12 +1,15 @@
 #news {
     padding-bottom: 10em;
 
-    h2 {
-        @include mixins.title-sp();
+    .picture img {
+        position: absolute;
+        display: block;
+        z-index: -100;
+        width: 50vw;
+    }
 
-        @include mixins.mq(pc) {
-            @include mixins.title-pc();
-        }
+    h2 {
+        @include mixins.title-pig();
     }
 
     ul {
@@ -15,7 +18,8 @@
 
         @include mixins.mq(pc) {
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
+            justify-content: space-between;
         }
 
         li article {
@@ -24,7 +28,7 @@
 
             @include mixins.mq(pc) {
                 border-top: none;
-                margin: 1em;
+                width: 28vw;
             }
 
             &:last-child {
@@ -36,12 +40,11 @@
             }
 
             img {
-                @include mixins.sp-hide();
                 display: none;
 
                 @include mixins.mq(pc) {
                     display: block;
-                    border: 1px #403333 solid;
+                    border: 1px variables.$sub-color solid;
                     border-radius: 15px;
                 }
             }
@@ -65,10 +68,5 @@
                 }
             }
         }
-
-    }
-
-    .more {
-        @include mixins.more()
     }
 }
