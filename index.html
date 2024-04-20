@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -27,12 +28,12 @@
         <h1>
             <a href="#"><img src="/images/logo_brown.svg" alt="logo"></a>
         </h1>
-        <div id="hamburger">
+        <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
-        <nav id="navigation">
+        <nav class="globalMenuSp">
             <ul>
                 <li><a href="https://mipig.co.jp/colours/">色柄・価格のご案内</a></li>
                 <li><a href="https://mipig.co.jp/service/family/reservation/">お迎えのご案内</a></li>
@@ -42,20 +43,13 @@
                         <span>サービス一覧</span>
                         <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="sub-menu">
-                        <li><i class="fa-solid fa-caret-right"></i>
-                            <a href="https://mipig.co.jp/service/farm/">mipig + farm</a></li>
-                        <li><i class="fa-solid fa-caret-right"></i>
-                            <a href="https://mipig.co.jp/service/cafe/">mipig + cafe</a></li>
-                        <li><i class="fa-solid fa-caret-right"></i>
-                            <a href="https://mipig.co.jp/service/food/">mipig + food</a></li>
-                        <li><i class="fa-solid fa-caret-right"></i>
-                            <a href="https://mipig.co.jp/service/app/">mipig owners</a></li>
-                        <li><i class="fa-solid fa-caret-right"></i>
-                            <a href="https://mipig.co.jp/service/channel/">mipig + channel</a></li>
-                        <li><i class="fa-solid fa-caret-right"></i>
-                            <a href="https://mipig.co.jp/service/pro/">mipig + pro</a></li>
-                        <li><i class="fa-solid fa-caret-right"></i>
-                            <a href="https://mipig.co.jp/service/family/">mipig + family</a></li>
+                        <li><a href="https://mipig.co.jp/service/farm/">mipig + farm</a></li>
+                        <li><a href="https://mipig.co.jp/service/cafe/">mipig + cafe</a></li>
+                        <li><a href="https://mipig.co.jp/service/food/">mipig + food</a></li>
+                        <li><a href="https://mipig.co.jp/service/app/">mipig owners</a></li>
+                        <li><a href="https://mipig.co.jp/service/channel/">mipig + channel</a></li>
+                        <li><a href="https://mipig.co.jp/service/pro/">mipig + pro</a></li>
+                        <li><a href="https://mipig.co.jp/service/family/">mipig + family</a></li>
                     </ul>
                 </li>
 
@@ -65,10 +59,8 @@
                         <span>お問い合わせ</span>
                         <i class="fa-solid fa-chevron-down"></i></a>
                     <ul class="sub-menu">
-                        <li><i class="fa-solid fa-caret-right"></i>
-                            <a href="https://mipig.co.jp/contact/individual/">個人の方のお問い合わせ</a></li>
-                        <li><i class="fa-solid fa-caret-right"></i>
-                            <a href="https://mipig.co.jp/contact/corporation/">法人の方のお問い合わせ</a></li>
+                        <li><a href="https://mipig.co.jp/contact/individual/">個人の方のお問い合わせ</a></li>
+                        <li><a href="https://mipig.co.jp/contact/corporation/">法人の方のお問い合わせ</a></li>
                     </ul>
                 </li>
 
@@ -384,7 +376,7 @@
                     </a>
                 </li>
             </ul>
-            <a href="">
+            <a href="https://mipig.co.jp/service/">
                 <i class="fa-solid fa-chevron-right"></i>
                 すべて表示</a>
         </div>
@@ -442,19 +434,20 @@
                                 <li class="sp_hide">
                                     <ul>
                                         <li>
-                                            <a href="https://mipig.co.jp/service/family/foreword/">お迎えを検討中の方へ</a>
+                                            <!-- <i class="fa-solid fa-circle"></i> -->
+                                            <a href="https://mipig.co.jp/service/family/foreword/">・お迎えを検討中の方へ</a>
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-caret-right"></i>
-                                            <a href="https://mipig.co.jp/service/family/flow/">お迎えまでの流れ</a>
+                                            <!-- <i class="fa-solid fa-circle"></i> -->
+                                            <a href="https://mipig.co.jp/service/family/flow/">・お迎えまでの流れ</a>
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-caret-right"></i>
-                                            <a href="https://mipig.co.jp/service/family/voice/">オーナー様の声</a>
+                                            <!-- <i class="fa-solid fa-circle"></i> -->
+                                            <a href="https://mipig.co.jp/service/family/voice/">・オーナー様の声</a>
                                         </li>
                                         <li>
-                                            <i class="fa-solid fa-caret-right"></i>
-                                            <a href="https://mipig.co.jp/service/family/reservation/">お迎えのご予約</a>
+                                            <!-- <i class="fa-solid fa-circle"></i> -->
+                                            <a href="https://mipig.co.jp/service/family/reservation/">・お迎えのご予約</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -515,6 +508,7 @@
         </aside>
     </footer>
     <!-- footer end -->
+    <script src="/assets/js/main.js"></script>
 </body>
 
 </html>
