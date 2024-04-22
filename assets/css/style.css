@@ -45,7 +45,7 @@ img {
   transition: 0.2s;
 }
 .more:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 .more:before {
   content: "";
@@ -94,7 +94,7 @@ header h1 img {
     transition: 0.2s;
   }
   header h1 img:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 header .hamburger {
@@ -231,7 +231,7 @@ header .globalMenuSp > ul:first-child li {
     margin: 0;
   }
   header .globalMenuSp > ul:first-child li:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -267,7 +267,7 @@ header .globalMenuSp > ul:last-child > li > a > i {
     padding-bottom: 5em;
   }
   header .globalMenuSp > ul:last-child > li span:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 header .globalMenuSp > ul:last-child > li .sub-menu {
@@ -300,7 +300,6 @@ main {
   overflow: hidden;
   z-index: 200;
   width: 100vw;
-  height: 100vh;
   height: calc(100vh - 8.5em);
 }
 main::after {
@@ -339,8 +338,8 @@ main video {
 }
 @media screen and (min-width: 1000px) {
   main video {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: max-content;
   }
 }
 main img {
@@ -564,7 +563,7 @@ main img {
   transition: 0.2s;
 }
 #family ul li:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 @media screen and (min-width: 1000px) {
   #family ul li {
@@ -674,7 +673,7 @@ main img {
   transition: 0.2s;
 }
 #service ul li h3:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 #service ul li h3 a {
   color: #fff;
@@ -754,7 +753,7 @@ main img {
     transition: 0.2s;
   }
   #news ul li article:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 #news ul li article:last-child {
@@ -972,7 +971,7 @@ main img {
     transition: 0.2s;
   }
   #instagram ul li:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 #instagram::after {
@@ -1019,7 +1018,7 @@ footer #footer-logo a {
   transition: 0.2s;
 }
 footer #footer-logo a:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 footer #footer-logo a:first-child {
   font-size: 8px;
@@ -1080,7 +1079,7 @@ footer #footer-service {
     transition: 0.2s;
   }
   footer #footer-service ul li a:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
   footer #footer-service ul li a span {
     display: block;
@@ -1111,7 +1110,7 @@ footer #footer-service > a {
   transition: 0.2s;
 }
 footer #footer-service > a:hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 footer #footer-service > a i {
   font-size: 0.7em;
@@ -1154,7 +1153,7 @@ footer aside #footer-link > div > ul > li:not(:has(i)) {
   transition: 0.2s;
 }
 footer aside #footer-link > div > ul > li:not(:has(i)):hover {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 @media screen and (min-width: 1000px) {
   footer aside #footer-link > div:first-child {
@@ -1182,7 +1181,7 @@ footer aside #footer-link > div:first-child > ul .sp_hide {
     transition: 0.2s;
   }
   footer aside #footer-link > div:first-child > ul .sp_hide ul > li:not(.sp_hide):hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
   footer aside #footer-link > div:first-child > ul .sp_hide ul i {
     margin-right: 0.5em;
@@ -1208,7 +1207,7 @@ footer aside #social ul {
     transition: 0.2s;
   }
   footer aside #social ul li:hover {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 footer aside #social ul li:last-child {
